@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paris Urban Quality Index + HDI</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="hero source-hero" id="top">
+    <nav class="topbar" aria-label="Page navigation">
+      <a href="../">Compare Cities</a>
+      <a href="#intro">Paris Connection</a>
+      <a href="#index-lab">UQI + HDI</a>
+      <a href="../cdmx/">Mexico City</a>
+    </nav>
+    <div class="hero-grid reveal">
+      <div>
+        <p class="eyebrow">Paris, 1870-2020</p>
+        <h1>The model city: Paris as planning reference.</h1>
+        <p class="hero-copy">Paris is the original Haussmannized capital that Mexico City imitated. This page applies the same UQI and HDI instrument to all 20 arrondissements.</p>
+      </div>
+      <aside class="hero-panel">
+        <p>Paris built the boulevard-and-sewer grammar that Porfirian elites copied. But even Paris distributes parks, transit, and amenities unevenly across arrondissements. Compare both cities on the <a href="../">parallel page</a>.</p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="thesis reveal" id="intro">
+      <p class="eyebrow">Why Paris matters here</p>
+      <h2>The city Mexico City tried to become</h2>
+      <p>Paris under Haussmann (1853-1870) established the modern planning toolkit: wide boulevards, unified sewer and water networks, formal parks, and standardized building codes. Porfirian Mexico City imported that visual and technical language through Reforma, new parks, and elite neighborhoods.</p>
+      <div class="research-question">
+        <p class="eyebrow">Parallel question</p>
+        <h3>Did Paris achieve equal urban quality across its arrondissements, or does its own spatial inequality mirror what Mexico City inherited?</h3>
+        <p>Paris scores higher overall on infrastructure coverage, but the UQI map still shows variation: western and central arrondissements retain more green space and transit access per capita, while eastern arrondissements carry higher density and lower amenity scores.</p>
+      </div>
+    </section>
+
+    <section class="lab reveal" id="index-lab">
+      <div class="section-head">
+        <div><p class="eyebrow">Paris data layer</p><h2>UQI and HDI by Arrondissement</h2></div>
+        <p>Same controls as Mexico City: decade slider, variable toggles, UQI map, HDI map, scatterplot, and line chart.</p>
+      </div>
+      <div class="control-block map-slider sticky-slider"><div class="slider-heading"><label for="decadeSlider">UQI decade <strong id="decadeLabel">2020</strong></label><button id="playDecades" type="button">Play</button></div><input id="decadeSlider" type="range" min="0" max="15" value="15" step="1"><div id="decadeTicks" class="ticks"></div></div>
+      <details class="variables-drawer">
+        <summary>Variables in UQI <button id="resetVariables" type="button">Reset</button></summary>
+        <div id="variableControls" class="variable-grid variable-grid-compact"></div>
+      </details>
+      <article class="viz-card big-map-card"><div class="viz-title"><h3>Urban Quality Index</h3><span id="uqiMapLabel">2020</span></div><div id="uqiMap" class="svg-frame big-map"></div><div class="legend"><span>Lower</span><div class="uqi-gradient"></div><span>Higher</span></div></article>
+      <article class="viz-card hdi-section"><div class="viz-title"><h3>Human Development Index</h3><span id="hdiMapLabel">2020</span></div><div id="hdiMap" class="svg-frame"></div><div class="legend"><span>Lower</span><div class="hdi-gradient"></div><span>Higher</span></div></article>
+      <article class="viz-card scatter-card"><div class="viz-title"><h3>UQI vs. HDI</h3><span id="scatterLabel">2020</span></div><div id="scatterPlot" class="chart-frame"></div><div class="interpretation"><h3>What this shows</h3><p>In Paris, UQI and HDI align strongly: arrondissements with more transit, green space, and civic amenities also rank higher on health, education, and income. The 7e, 8e, and 16e lead on both measures; the 18e, 19e, and 20e lag.</p></div></article>
+      <section class="inequality-section">
+        <div class="section-head">
+          <div><p class="eyebrow">Inequality over time</p><h2>Arrondissement trajectories</h2></div>
+          <p>Each line tracks one arrondissement's UQI score from 1870 to 2020. Paris reached near-universal infrastructure coverage early, so lines converge more than in Mexico City — but spatial gaps in parks and transit persist.</p>
+        </div>
+        <article class="viz-card"><div class="viz-title"><h3>UQI by Arrondissement Over Time</h3><span>1870-2020</span></div><div id="uqiLineChart" class="chart-frame"></div></article>
+      </section>
+    </section>
+  </main>
+  <footer><p>Data: INSEE, opendata.paris.fr, Filosofi 2021, ORS-IDF life expectancy. See <a href="../cdmx/sources.html">methodology</a> and the <a href="../">comparison page</a>.</p></footer>
+  <div id="tooltip" role="status" aria-live="polite"></div>
+  <script src="../js/city-lab.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

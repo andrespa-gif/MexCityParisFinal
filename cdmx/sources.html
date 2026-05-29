@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources and Methodology · Mexico City UQI</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="hero source-hero" id="top">
+    <nav class="topbar" aria-label="Page navigation">
+      <a href="../">Compare Cities</a>
+      <a href="index.html#intro">Key Terms</a>
+      <a href="index.html#timeline">Timeline</a>
+      <a href="index.html#index-lab">UQI + HDI</a>
+      <a href="sources.html" class="active">Sources</a>
+      <a href="../paris/">Paris</a>
+    </nav>
+    <div class="hero-grid reveal visible">
+      <div>
+        <p class="eyebrow">Data appendix</p>
+        <h1>Sources, proxies, and readings.</h1>
+        <p class="hero-copy">This page explains where the data came from, which variables are direct observations, which are proxies or reconstructions, and which readings shaped the interpretation.</p>
+      </div>
+      <aside class="hero-panel">
+        <p>The UQI is a historical visualization tool, not an official government index. It combines documented data, reconstructed historical series, and transparent proxies to compare alcaldías over time.</p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="thesis reveal visible">
+      <p class="eyebrow">Core datasets</p>
+      <h2>Where The Data Came From</h2>
+      <div class="source-list">
+        <article><h3>INEGI Census and Marco Geoestadístico</h3><p>INEGI census data supports population, inhabited dwellings, and modern alcaldía geography. The alcaldía boundary layer follows the present-day 16-borough structure so every decade can be compared with the same geography.</p></article>
+        <article><h3>PNUD Human Development Index</h3><p>HDI / IDH values come from the workbook’s PNUD municipal HDI sheet. HDI combines health, education, and income. The available comparison years are 1990, 2000, 2010, 2015, and 2020.</p></article>
+        <article><h3>SEMOVI and Mexico City Mobility Sources</h3><p>Transit access is based on station-equivalent access by alcaldía, with modes weighted by service quality and capacity. Metro is used as the benchmark mode.</p></article>
+        <article><h3>SEDEMA Green Areas Inventory</h3><p>Green space per capita uses current SEDEMA green-space totals divided by historical population. This makes the variable useful for showing pressure on available green space as population grew.</p></article>
+        <article><h3>Hospitals, Museums, and Libraries</h3><p>Hospital access counts major hospital-level institutions. Third spaces count museums and public libraries with documented opening dates, divided by population.</p></article>
+      </div>
+    </section>
+
+    <section class="thesis reveal visible">
+      <p class="eyebrow">Proxy logic</p>
+      <h2>How The UQI Variables Were Modeled</h2>
+      <div class="terms-grid">
+        <article><strong>Transit Access</strong><span>Weighted station-equivalents per 100,000 residents. Metro receives the benchmark weight because of its capacity and dedicated right of way.</span></article>
+        <article><strong>Electricity</strong><span>Historical coverage by inhabited dwellings. By 2020 it is nearly universal, so the inequality is mostly historical.</span></article>
+        <article><strong>Piped Water</strong><span>Coverage of inhabited dwellings with piped water. This remains one of the clearest present-day infrastructure inequalities.</span></article>
+        <article><strong>Drainage</strong><span>Coverage of inhabited dwellings with drainage. Rural and peripheral alcaldías reached near-universal coverage later.</span></article>
+        <article><strong>Hospital Access</strong><span>Major hospitals per 100,000 residents. Small clinics and centros de salud are excluded to keep the measure consistent.</span></article>
+        <article><strong>Green Space</strong><span>Current green-space totals divided by historical population. This is a pressure proxy, not a claim that historical park area was unchanged.</span></article>
+        <article><strong>Third Spaces</strong><span>Museums and public libraries per 100,000 residents. Used as a proxy for civic/cultural public infrastructure.</span></article>
+        <article><strong>Excluded Variables</strong><span>Population, density, persons per dwelling, and inhabited dwellings were removed from the UQI so the index focuses on urban services and amenities rather than demographic size or crowding.</span></article>
+      </div>
+    </section>
+
+    <section class="thesis reveal visible">
+      <p class="eyebrow">Readings used</p>
+      <h2>Knowledge Base and Interpretive Sources</h2>
+      <div class="source-list">
+        <article><h3>Spatial Equity in Access to Urban Parks via Public Transit</h3><p>Durán-Pérez, Núñez, and Gómez Gámez, <em>Land</em> 2025. This study shaped the park-access and centrality framing. It explains reach, gravity, and closeness as ways to think about how public transit connects residents to green space.</p></article>
+        <article><h3>2025 STA Spotlight: Integrating Mobility in Mexico City</h3><p>This reading shaped the mobility context: Integrated Mobility Card, Metro, Metrobús, trolleybus, RTP, Cablebús, Ecobici, and the attempt to target dense and marginalized areas.</p></article>
+        <article><h3>Mexico City and the French / Paris Model</h3><p>The historical framing comes from the timeline research: Paseo de la Reforma, Porfirian modernization, elite planned neighborhoods, and the contrast with colonias populares and peripheral infrastructure gaps.</p></article>
+        <article><h3>Paris Twin Dataset</h3><p>Paris arrondissement UQI built from INSEE population panel, Filosofi 2021 income, opendata.paris.fr green space and libraries, and Wikidata/OSM transit. HDI computed locally using UN HDR 2022 geometric mean — see <code>data/paris/hdi-methodology.md</code>.</p></article>
+      </div>
+    </section>
+
+    <section class="thesis reveal visible">
+      <p class="eyebrow">Limitations</p>
+      <h2>What To Be Careful About</h2>
+      <p>Several early historical values are reconstructed or back-cast. They are useful for narrative visualization but should not be treated like direct census observations. The UQI is also sensitive to variable selection: changing the selected variables changes the meaning of “urban quality.” The scatterplot shows association between UQI and HDI, not proof of causation.</p>
+    </section>
+  </main>
+
+  <footer><p><a href="index.html">Mexico City timeline</a> · <a href="../">Compare with Paris</a> · <a href="../paris/">Paris maps</a></p></footer>
+</body>
+</html>

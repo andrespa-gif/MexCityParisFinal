@@ -1,0 +1,21 @@
+arrondissement_num,insee_code,arrondissement,median_income,filosofi_year
+1,75101,1er — Louvre,35030.0,2021
+2,75102,2e — Bourse,34050.0,2021
+3,75103,3e — Temple,34800.0,2021
+4,75104,4e — Hôtel-de-Ville,33040.0,2021
+5,75105,5e — Panthéon,35960.0,2021
+6,75106,6e — Luxembourg,41750.0,2021
+7,75107,7e — Palais-Bourbon,45380.0,2021
+8,75108,8e — Élysée,44100.0,2021
+9,75109,9e — Opéra,37220.0,2021
+10,75110,10e — Entrepôt,29470.0,2021
+11,75111,11e — Popincourt,30210.0,2021
+12,75112,12e — Reuilly,29940.0,2021
+13,75113,13e — Gobelins,25670.0,2021
+14,75114,14e — Observatoire,29460.0,2021
+15,75115,15e — Vaugirard,32780.0,2021
+16,75116,16e — Passy,41550.0,2021
+17,75117,17e — Batignolles,33390.0,2021
+18,75118,18e — Buttes-Montmartre,24910.0,2021
+19,75119,19e — Buttes-Chaumont,22870.0,2021
+20,75120,20e — Ménilmontant,23570.0,2021

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Las dos gramáticas — Mexico City and Paris compared</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="compare-page">
+  <header class="hero compare-hero" id="top">
+    <nav class="topbar" aria-label="Page navigation">
+      <a href="#compare">Compare</a>
+      <a href="cdmx/">Mexico City</a>
+      <a href="paris/">Paris</a>
+      <a href="cdmx/sources.html">Sources</a>
+    </nav>
+    <div class="hero-grid reveal">
+      <div>
+        <p class="eyebrow">Mexico City × Paris</p>
+        <h1>Las dos gramáticas — Mexico City and Paris compared.</h1>
+        <p class="hero-copy">Has urban planning produced equal cities, or does spatial inequality of planning translate into inequality of life?</p>
+      </div>
+      <aside class="hero-panel">
+        <p>Two cities, same instrument, same question, parallel evidence. Mexico City copied Paris as a planning model during the Porfiriato. This page runs the same UQI and HDI maps on both cities side by side, driven by one shared decade slider and variable panel.</p>
+      </aside>
+    </div>
+  </header>
+
+  <main class="compare-shell" id="compare">
+    <section class="compare-toolbar reveal">
+      <div class="control-block map-slider sticky-slider">
+        <div class="slider-heading">
+          <label for="decadeSlider">Decade <strong id="decadeLabel">2020</strong></label>
+          <button id="playDecades" type="button">Play</button>
+        </div>
+        <input id="decadeSlider" type="range" min="0" max="15" value="15" step="1">
+        <div id="decadeTicks" class="ticks"></div>
+      </div>
+      <details class="variables-drawer">
+        <summary>Variables in UQI (both cities) <button id="resetVariables" type="button">Reset</button></summary>
+        <div id="variableControls" class="variable-grid variable-grid-compact"></div>
+      </details>
+    </section>
+
+    <section class="compare-row reveal">
+      <article class="viz-card compare-cell paris">
+        <div class="viz-title"><h3>Paris — Urban Quality Index</h3><span id="parisUqiMapLabel">2020</span></div>
+        <div id="parisUqiMap" class="svg-frame compare-map"></div>
+        <div class="legend"><span>Lower</span><div class="uqi-gradient"></div><span>Higher</span></div>
+      </article>
+      <article class="viz-card compare-cell mexico">
+        <div class="viz-title"><h3>Mexico City — Urban Quality Index</h3><span id="cdmxUqiMapLabel">2020</span></div>
+        <div id="cdmxUqiMap" class="svg-frame compare-map"></div>
+        <div class="legend"><span>Lower</span><div class="uqi-gradient"></div><span>Higher</span></div>
+      </article>
+    </section>
+
+    <section class="compare-row reveal">
+      <article class="viz-card compare-cell paris">
+        <div class="viz-title"><h3>Paris — Human Development Index</h3><span id="parisHdiMapLabel">2020</span></div>
+        <div id="parisHdiMap" class="svg-frame compare-map"></div>
+        <div class="legend"><span>Lower</span><div class="hdi-gradient"></div><span>Higher</span></div>
+      </article>
+      <article class="viz-card compare-cell mexico">
+        <div class="viz-title"><h3>Mexico City — Human Development Index</h3><span id="cdmxHdiMapLabel">2020</span></div>
+        <div id="cdmxHdiMap" class="svg-frame compare-map"></div>
+        <div class="legend"><span>Lower</span><div class="hdi-gradient"></div><span>Higher</span></div>
+      </article>
+    </section>
+
+    <section class="compare-row reveal">
+      <article class="viz-card compare-cell paris scatter-card">
+        <div class="viz-title"><h3>Paris — UQI vs. HDI</h3><span id="parisScatterLabel">2020</span></div>
+        <div id="parisScatterPlot" class="chart-frame compare-chart"></div>
+      </article>
+      <article class="viz-card compare-cell mexico scatter-card">
+        <div class="viz-title"><h3>Mexico City — UQI vs. HDI</h3><span id="cdmxScatterLabel">2020</span></div>
+        <div id="cdmxScatterPlot" class="chart-frame compare-chart"></div>
+      </article>
+    </section>
+
+    <section class="compare-row reveal">
+      <article class="viz-card compare-cell paris">
+        <div class="viz-title"><h3>Paris — UQI Over Time</h3><span>1870-2020</span></div>
+        <div id="parisUqiLineChart" class="chart-frame compare-chart"></div>
+      </article>
+      <article class="viz-card compare-cell mexico">
+        <div class="viz-title"><h3>Mexico City — UQI Over Time</h3><span>1870-2020</span></div>
+        <div id="cdmxUqiLineChart" class="chart-frame compare-chart"></div>
+      </article>
+    </section>
+
+    <section class="thesis reveal closing-copy">
+      <h2>What both cities show</h2>
+      <p>Both maps show spatial concentration of planning quality. Infrastructure, parks, transit, and civic amenities cluster in central and western districts. HDI follows the same gradient: neighborhoods with stronger UQI scores also rank higher on health, education, and income.</p>
+      <h2>How the cities differ</h2>
+      <p>Paris reached near-universal water, drainage, and electricity coverage by the early 20th century, so its UQI lines converge more tightly. Mexico City shows wider spread: peripheral alcaldías improved later and remain lower. Paris is the model; Mexico City is the uneven copy — selective Haussmannization without equal peripheral investment.</p>
+      <p>The stakes are lived inequality: where you are born in either city still shapes access to parks, hospitals, transit, and the conditions that determine how long and how well you live.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="cdmx/">Mexico City timeline + maps</a> ·
+      <a href="paris/">Paris maps</a> ·
+      <a href="cdmx/sources.html">Sources & methodology</a>
+    </p>
+  </footer>
+  <div id="tooltip" role="status" aria-live="polite"></div>
+  <script src="js/city-lab.js"></script>
+  <script src="compare.js"></script>
+</body>
+</html>
