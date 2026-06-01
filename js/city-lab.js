@@ -14,8 +14,11 @@ window.createCityLab = function createCityLab(config) {
     chartHeight = 560,
     compactVariables = true,
     dotColor = null,
-    referenceDecade = null
+    referenceDecade = null,
+    cityName = ""
   } = config;
+
+  const detailPanels = new Map();
 
   const state = {
     data: null,
@@ -61,7 +64,16 @@ window.createCityLab = function createCityLab(config) {
   function matchSlug(value) {
     if (customMatchSlug) return customMatchSlug(value);
     const s = slug(value);
-    return aliases.get(s) || s;
+    if (aliases.has(s)) return aliases.get(s);
+    const arrMatch = s.match(/^(\d+)(?:er|e)?/);
+    if (arrMatch) {
+      const n = arrMatch[1];
+      for (const item of neighborhoods()) {
+        const itemSlug = slug(item.name);
+        if (new RegExp(`^${n}(?:er|e)_`).test(itemSlug)) return itemSlug;
+      }
+    }
+    return s;
   }
 
   function neighborhoods() {
@@ -253,6 +265,46 @@ window.createCityLab = function createCityLab(config) {
     if (hdi) renderMap("hdiMap", "hdi");
     if (scatter) renderScatter();
     if (line) renderUqiLineChart();
+    detailPanels.forEach((panel) => panel.refreshIfOpen());
+  }
+
+  function buildDetailCtx(mode) {
+    return {
+      data: state.data,
+      neighborhoodKey,
+      decade: state.decade,
+      hdiMapYear: state.hdiMapYear,
+      mode,
+      cityName,
+      matchSlug,
+      normalize,
+      scoreNeighborhood,
+      neighborhoods,
+      nearestHdiYear,
+      defaultVariables: () => state.data.variables.filter((variable) => variable.defaultSelected)
+    };
+  }
+
+  function ensureDetailPanel(elementKey) {
+    const host = el(elementKey);
+    if (!host || !window.createMapDetailPanel) return null;
+    if (!detailPanels.has(elementKey)) {
+      detailPanels.set(elementKey, window.createMapDetailPanel(host));
+    }
+    return detailPanels.get(elementKey);
+  }
+
+  function bindDetailPanel(elementKey, mode) {
+    const host = el(elementKey);
+    const panel = ensureDetailPanel(elementKey);
+    const mapRoot = host?.querySelector("svg");
+    if (!panel || !mapRoot) return;
+    panel.bindMap(mapRoot, elementKey, buildDetailCtx(mode));
+    if (panel.openSlug) {
+      mapRoot.querySelectorAll(".alcaldia-path").forEach((path) => {
+        path.classList.toggle("selected", matchSlug(path.dataset.name) === panel.openSlug);
+      });
+    }
   }
 
   function setReferenceDecade(decade) {
@@ -285,6 +337,7 @@ window.createCityLab = function createCityLab(config) {
       path.addEventListener("mousemove", (event) => showMapTooltip(event, path.dataset.mode, path.dataset.name, path.dataset.value));
       path.addEventListener("mouseleave", hideTooltip);
     });
+    bindDetailPanel(elementKey, mode);
   }
 
   function componentBreakdown(name) {
@@ -481,6 +534,7 @@ window.createCityLab = function createCityLab(config) {
     scatterRows,
     selectedVariables,
     matchSlug,
+    normalize,
     featureName,
     shortName,
     colorFromScore,

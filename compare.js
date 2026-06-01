@@ -114,6 +114,7 @@ Promise.all([
 
   compareState.parisLab = window.createCityLab({
     neighborhoodKey: "arrondissements",
+    cityName: "Paris",
     manageControls: false,
     initNav: false,
     mapWidth: 520,
@@ -133,6 +134,7 @@ Promise.all([
 
   compareState.cdmxLab = window.createCityLab({
     neighborhoodKey: "alcaldias",
+    cityName: "Mexico City",
     manageControls: false,
     initNav: false,
     mapWidth: 520,

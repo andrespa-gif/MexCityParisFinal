@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next Steps — The Plan and the Price</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="plan-page methodology-page">
+
+  <header class="method-header">
+    <a class="back-link" href="index.html">← The Plan and the Price</a>
+    <h1>Next Steps</h1>
+    <p class="method-lead">From a compelling correlation between planning quality and human development to a defensible causal claim — and from a two-city visualization to a reusable public instrument.</p>
+  </header>
+
+  <main class="method-main">
+
+    <section class="method-section">
+      <h2>I. What this project measured</h2>
+      <p>The Urban Quality Index (UQI) records where the state chose to invest in transit, utilities, health infrastructure, green space, and civic amenities at the neighborhood scale. The Human Development Index (HDI) records how those same neighborhoods fare on health, education, and income. Across Paris and Mexico City at the 2020 cross-section, neighborhoods with higher UQI also rank higher on HDI — a pattern visible in the scatter plots and summarized by positive slopes and substantial R² values on each city's regression.</p>
+      <p>That finding is descriptive, not causal. It establishes that spatial inequality of planning maps onto spatial inequality of life in two cities that share a Haussmann-era origin story but differ in colonial history, periphery formation, and state capacity. What the current version can claim is association and historical grounding. What it cannot yet claim is that improving UQI would raise HDI, or that the correlation would hold unchanged in cities planned on different logics.</p>
+      <blockquote class="stakes-line">
+        <p>The UQI–HDI relationship is robust enough to motivate further work, but not yet strong enough to justify policy prescriptions without addressing identification, geography, data quality, and index design.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section">
+      <h2>II. Causal identification</h2>
+      <p>The current analysis establishes correlation between planning quality and human development. It cannot establish causation. Wealthier neighborhoods may attract planning investment rather than the reverse; industrial legacy, topography, and tenure regimes may co-determine both UQI components and HDI sub-indices. Two directions are worth pursuing:</p>
+      <h3>Instrumental variables</h3>
+      <p>Historical accidents of planning — the exact routing of Haussmann's boulevards, the placement of early metro lines driven by engineering constraints rather than demand — create quasi-random variation in infrastructure investment that could instrument for UQI. An IV approach would estimate the causal effect of planning quality on HDI while controlling for the possibility that wealth attracts planning rather than the reverse.</p>
+      <h3>Difference-in-differences</h3>
+      <p>Major infrastructure openings (a new metro line, a large park) create natural experiments: neighborhoods that received the investment versus comparable neighborhoods that did not. A DiD design around these events would identify the HDI impact of a specific planning intervention.</p>
+      <blockquote class="stakes-line">
+        <p>Correlation across neighborhoods at one moment is the starting point. Quasi-experimental designs around historical routing and discrete openings are the path to causation.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section">
+      <h2>III. Extending the geography</h2>
+      <p>Paris and Mexico City were chosen because they share a Haussmann origin story. The natural extension is to ask whether the UQI × HDI relationship holds in cities that were planned differently:</p>
+      <ul class="method-list">
+        <li>A <strong>post-colonial grid city</strong> (Buenos Aires, Nairobi) where the planning logic was extraction rather than urban improvement</li>
+        <li>A city that <strong>urbanized informally first and planned retroactively</strong> (Lagos, Jakarta)</li>
+        <li>A city with <strong>strong redistributive planning traditions</strong> (Vienna, Singapore)</li>
+      </ul>
+      <p>If the correlation holds across all of these, it is a general law. If it breaks for Vienna or Singapore, that tells us something about what planning quality actually requires to translate into human development.</p>
+      <blockquote class="stakes-line">
+        <p>Two Haussmann-lineage capitals establish the pattern. Cities planned on different logics test whether the pattern is universal or contingent on a particular planning tradition.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section">
+      <h2>IV. Better HDI data</h2>
+      <p>The current Paris HDI is computed from INSEE Filosofi 2021 using a proxy for expected years of schooling. Three improvements would strengthen it:</p>
+      <ul class="method-list">
+        <li><strong>Actual enrollment ratio data</strong> at the arrondissement level, if publishable by the French Ministry of Education under open data commitments</li>
+        <li><strong>Life expectancy</strong> from the full ORS-IDF 2021 arrondissement table rather than the published summary anchors</li>
+        <li>A <strong>historical HDI panel for Paris</strong> beyond the single 2020 cross-section, using digitized census records for education and mortality by arrondissement back to at least 1950</li>
+      </ul>
+      <p>For CDMX, the PNUD municipal HDI series ends at 2020. Extending it to 2024 using INEGI's Encuesta Nacional de Ingresos y Gastos de los Hogares would allow a post-pandemic update.</p>
+      <blockquote class="stakes-line">
+        <p>Sub-indicator quality at the neighborhood scale limits how precisely we can test whether planning investment precedes human development gains over time.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section">
+      <h2>V. The index itself</h2>
+      <p>The UQI uses equal weights across selected variables. This is a transparent and defensible choice for an exploratory index, but it is also an assumption. Two refinements:</p>
+      <h3>PCA-derived weights</h3>
+      <p>Let the cross-sectional variance structure of the data determine which variables carry the most independent signal, rather than assigning them equal weight by fiat.</p>
+      <h3>Welfare-theoretic weights</h3>
+      <p>Weight variables according to their estimated contribution to HDI outcomes using the regression coefficients from the UQI × HDI model, then recompute UQI and check whether rankings change materially. If they do not, equal weighting is validated. If they do, the reweighted index is arguably more meaningful.</p>
+      <blockquote class="stakes-line">
+        <p>Equal weighting is a transparency choice, not a theorem. Sensitivity to alternative weighting schemes is how we learn whether the index ranks neighborhoods for robust reasons.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section">
+      <h2>VI. Making it a public tool</h2>
+      <p>The current site is a research visualization. With modest additional work it could be a reusable instrument:</p>
+      <ul class="method-list">
+        <li>An <strong>API endpoint</strong> that accepts a city name and returns UQI scores if the underlying data exists</li>
+        <li>A <strong>data submission form</strong> allowing researchers to contribute neighborhood-level data for new cities, which the pipeline normalizes and adds to the comparison interface</li>
+        <li>A <strong>teacher's guide</strong> for using the tool in courses on urban economics, development, or inequality — the variable toggle and decade slider already make it well suited for classroom use</li>
+      </ul>
+      <blockquote class="stakes-line">
+        <p>The maps and sliders are already pedagogical. Packaging them as an open instrument would multiply the value of the underlying normalization pipeline.</p>
+      </blockquote>
+    </section>
+
+    <div class="ornament method-ornament">· · ·</div>
+
+    <section class="method-section method-section-closing">
+      <h2>VII. Where this leads</h2>
+      <p>The pattern this project found — spatial inequality of planning mapping onto spatial inequality of life — is robust enough across two very different cities to be worth testing at scale. The next steps above are not refinements for their own sake. They are the path from a compelling correlation to a defensible causal claim: instrument the historical accidents of boulevard and metro routing, exploit discrete infrastructure openings with difference-in-differences, extend the geography beyond the Haussmann lineage, tighten HDI measurement at the neighborhood scale, stress-test the index against alternative weights, and open the pipeline so other cities can enter the comparison. If the association survives that scrutiny, planning inequality is not merely a story about Paris and Mexico City. It is a general feature of how states build cities and how those builds endure in human lives.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ornament">· · ·</div>
+    <nav class="footer-nav">
+      <a href="index.html">The Plan and the Price</a>
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      <a href="methodology.html">Methodology &amp; sources</a>
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      <a href="next-steps.html">Next steps</a>
+    </nav>
+    <p class="footer-course">ECON 30 · Progress and Inequality · Stanford · Spring 2026</p>
+    <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
+  </footer>
+
+</body>
+</html>

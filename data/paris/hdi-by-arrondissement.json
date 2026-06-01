@@ -1,12 +1,20 @@
 {
-  "title": "[PLACEHOLDER] PARIS HDI by neighborhood",
-  "description": "[PLACEHOLDER] Extracted from main UQI dataset; replace with verified HDI sources.",
+  "title": "Paris Human Development Index",
+  "description": "Arrondissement HDI 2020 from INSEE Filosofi + ORS life expectancy + INSEE education (UN HDR 2022 geometric mean). 2000/2010 are documented backcasts from 2020.",
   "decades": [
-    "2000",
-    "2010",
-    "2020"
-  ],
-  "hdiYears": [
+    "1870",
+    "1880",
+    "1890",
+    "1900",
+    "1910",
+    "1920",
+    "1930",
+    "1940",
+    "1950",
+    "1960",
+    "1970",
+    "1980",
+    "1990",
     "2000",
     "2010",
     "2020"
@@ -14,412 +22,651 @@
   "variables": [
     {
       "key": "hdi",
-      "label": "Human Development Index",
-      "unit": "0-1",
+      "label": "HDI",
+      "unit": "index",
       "higherIsBetter": true,
-      "defaultSelected": true,
-      "description": "UN HDI composite"
+      "defaultSelected": true
     }
   ],
   "arrondissements": [
     {
-      "name": "1er \u2014 Louvre",
-      "slug": "1er_\u2014_louvre",
+      "name": "1er Louvre",
+      "id": 1,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.944
+          "hdi": 0.909
         },
         "2010": {
-          "hdi": 0.944
+          "hdi": 0.924
         },
         "2020": {
-          "hdi": 0.959
+          "hdi": 0.939,
+          "life_expectancy": 84.2,
+          "life_exp_index": 0.9877,
+          "education_index": 0.9004,
+          "income_index": 0.9309
         }
-      },
-      "hdi": {
-        "2000": 0.944,
-        "2010": 0.944,
-        "2020": 0.959
       }
     },
     {
-      "name": "2e \u2014 Bourse",
-      "slug": "2e_\u2014_bourse",
+      "name": "2e Bourse",
+      "id": 2,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9314
+          "hdi": 0.9143
         },
         "2010": {
-          "hdi": 0.9314
+          "hdi": 0.9293
         },
         "2020": {
-          "hdi": 0.9464
+          "hdi": 0.9443,
+          "life_expectancy": 84.5,
+          "life_exp_index": 0.9923,
+          "education_index": 0.9158,
+          "income_index": 0.9266
         }
-      },
-      "hdi": {
-        "2000": 0.9314,
-        "2010": 0.9314,
-        "2020": 0.9464
       }
     },
     {
-      "name": "3e \u2014 Temple",
-      "slug": "3e_\u2014_temple",
+      "name": "3e Temple",
+      "id": 3,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9382
+          "hdi": 0.9099
         },
         "2010": {
-          "hdi": 0.9382
+          "hdi": 0.9249
         },
         "2020": {
-          "hdi": 0.9532
+          "hdi": 0.9399,
+          "life_expectancy": 84.0,
+          "life_exp_index": 0.9846,
+          "education_index": 0.9067,
+          "income_index": 0.9299
         }
-      },
-      "hdi": {
-        "2000": 0.9382,
-        "2010": 0.9382,
-        "2020": 0.9532
       }
     },
     {
-      "name": "4e \u2014 H\u00f4tel-de-Ville",
-      "slug": "4e_\u2014_h\u00f4tel-de-ville",
+      "name": "4e Hôtel-de-Ville",
+      "id": 4,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9101
+          "hdi": 0.9047
         },
         "2010": {
-          "hdi": 0.9101
+          "hdi": 0.9197
         },
         "2020": {
-          "hdi": 0.9251
+          "hdi": 0.9347,
+          "life_expectancy": 83.8,
+          "life_exp_index": 0.9815,
+          "education_index": 0.9023,
+          "income_index": 0.9221
         }
-      },
-      "hdi": {
-        "2000": 0.9101,
-        "2010": 0.9101,
-        "2020": 0.9251
       }
     },
     {
-      "name": "5e \u2014 Panth\u00e9on",
-      "slug": "5e_\u2014_panth\u00e9on",
+      "name": "5e Panthéon",
+      "id": 5,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9483
+          "hdi": 0.9217
         },
         "2010": {
-          "hdi": 0.9483
+          "hdi": 0.9367
         },
         "2020": {
-          "hdi": 0.9633
+          "hdi": 0.9517,
+          "life_expectancy": 84.8,
+          "life_exp_index": 0.9969,
+          "education_index": 0.9249,
+          "income_index": 0.9349
         }
-      },
-      "hdi": {
-        "2000": 0.9483,
-        "2010": 0.9483,
-        "2020": 0.9633
       }
     },
     {
-      "name": "6e \u2014 Luxembourg",
-      "slug": "6e_\u2014_luxembourg",
+      "name": "6e Luxembourg",
+      "id": 6,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9648
+          "hdi": 0.9313
         },
         "2010": {
-          "hdi": 0.9648
+          "hdi": 0.9463
         },
         "2020": {
-          "hdi": 0.9798
+          "hdi": 0.9613,
+          "life_expectancy": 85.5,
+          "life_exp_index": 1.0,
+          "education_index": 0.928,
+          "income_index": 0.9574
         }
-      },
-      "hdi": {
-        "2000": 0.9648,
-        "2010": 0.9648,
-        "2020": 0.9798
       }
     },
     {
-      "name": "7e \u2014 Palais-Bourbon",
-      "slug": "7e_\u2014_palais-bourbon",
+      "name": "7e Palais-Bourbon",
+      "id": 7,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9749
+          "hdi": 0.9334
         },
         "2010": {
-          "hdi": 0.9749
+          "hdi": 0.9484
         },
         "2020": {
-          "hdi": 0.9899
+          "hdi": 0.9634,
+          "life_expectancy": 86.0,
+          "life_exp_index": 1.0,
+          "education_index": 0.9218,
+          "income_index": 0.97
         }
-      },
-      "hdi": {
-        "2000": 0.9749,
-        "2010": 0.9749,
-        "2020": 0.9899
       }
     },
     {
-      "name": "8e \u2014 \u00c9lys\u00e9e",
-      "slug": "8e_\u2014_\u00e9lys\u00e9e",
+      "name": "8e Élysée",
+      "id": 8,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9705
+          "hdi": 0.927
         },
         "2010": {
-          "hdi": 0.9705
+          "hdi": 0.942
         },
         "2020": {
-          "hdi": 0.9855
+          "hdi": 0.957,
+          "life_expectancy": 85.8,
+          "life_exp_index": 1.0,
+          "education_index": 0.9077,
+          "income_index": 0.9657
         }
-      },
-      "hdi": {
-        "2000": 0.9705,
-        "2010": 0.9705,
-        "2020": 0.9855
       }
     },
     {
-      "name": "9e \u2014 Op\u00e9ra",
-      "slug": "9e_\u2014_op\u00e9ra",
+      "name": "9e Opéra",
+      "id": 9,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.953
+          "hdi": 0.9194
         },
         "2010": {
-          "hdi": 0.953
+          "hdi": 0.9344
         },
         "2020": {
-          "hdi": 0.968
+          "hdi": 0.9494,
+          "life_expectancy": 84.1,
+          "life_exp_index": 0.9862,
+          "education_index": 0.9231,
+          "income_index": 0.9401
         }
-      },
-      "hdi": {
-        "2000": 0.953,
-        "2010": 0.953,
-        "2020": 0.968
       }
     },
     {
-      "name": "10e \u2014 Entrep\u00f4t",
-      "slug": "10e_\u2014_entrep\u00f4t",
+      "name": "10e Entrepôt",
+      "id": 10,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8687
+          "hdi": 0.8863
         },
         "2010": {
-          "hdi": 0.8687
+          "hdi": 0.9013
         },
         "2020": {
-          "hdi": 0.8837
+          "hdi": 0.9163,
+          "life_expectancy": 82.8,
+          "life_exp_index": 0.9662,
+          "education_index": 0.8801,
+          "income_index": 0.9048
         }
-      },
-      "hdi": {
-        "2000": 0.8687,
-        "2010": 0.8687,
-        "2020": 0.8837
       }
     },
     {
-      "name": "11e \u2014 Popincourt",
-      "slug": "11e_\u2014_popincourt",
+      "name": "11e Popincourt",
+      "id": 11,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8854
+          "hdi": 0.8939
         },
         "2010": {
-          "hdi": 0.8854
+          "hdi": 0.9089
         },
         "2020": {
-          "hdi": 0.9004
+          "hdi": 0.9239,
+          "life_expectancy": 83.5,
+          "life_exp_index": 0.9769,
+          "education_index": 0.8884,
+          "income_index": 0.9085
         }
-      },
-      "hdi": {
-        "2000": 0.8854,
-        "2010": 0.8854,
-        "2020": 0.9004
       }
     },
     {
-      "name": "12e \u2014 Reuilly",
-      "slug": "12e_\u2014_reuilly",
+      "name": "12e Reuilly",
+      "id": 12,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8827
+          "hdi": 0.8925
         },
         "2010": {
-          "hdi": 0.8827
+          "hdi": 0.9075
         },
         "2020": {
-          "hdi": 0.8977
+          "hdi": 0.9225,
+          "life_expectancy": 85.2,
+          "life_exp_index": 1.0,
+          "education_index": 0.8654,
+          "income_index": 0.9072
         }
-      },
-      "hdi": {
-        "2000": 0.8827,
-        "2010": 0.8827,
-        "2020": 0.8977
       }
     },
     {
-      "name": "13e \u2014 Gobelins",
-      "slug": "13e_\u2014_gobelins",
+      "name": "13e Gobelins",
+      "id": 13,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8458
+          "hdi": 0.8673
         },
         "2010": {
-          "hdi": 0.8458
+          "hdi": 0.8823
         },
         "2020": {
-          "hdi": 0.8608
+          "hdi": 0.8973,
+          "life_expectancy": 83.9,
+          "life_exp_index": 0.9831,
+          "education_index": 0.8313,
+          "income_index": 0.8839
         }
-      },
-      "hdi": {
-        "2000": 0.8458,
-        "2010": 0.8458,
-        "2020": 0.8608
       }
     },
     {
-      "name": "14e \u2014 Observatoire",
-      "slug": "14e_\u2014_observatoire",
+      "name": "14e Observatoire",
+      "id": 14,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8632
+          "hdi": 0.8937
         },
         "2010": {
-          "hdi": 0.8632
+          "hdi": 0.9087
         },
         "2020": {
-          "hdi": 0.8782
+          "hdi": 0.9237,
+          "life_expectancy": 84.6,
+          "life_exp_index": 0.9938,
+          "education_index": 0.8766,
+          "income_index": 0.9047
         }
-      },
-      "hdi": {
-        "2000": 0.8632,
-        "2010": 0.8632,
-        "2020": 0.8782
       }
     },
     {
-      "name": "15e \u2014 Vaugirard",
-      "slug": "15e_\u2014_vaugirard",
+      "name": "15e Vaugirard",
+      "id": 15,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9063
+          "hdi": 0.902
         },
         "2010": {
-          "hdi": 0.9063
+          "hdi": 0.917
         },
         "2020": {
-          "hdi": 0.9213
+          "hdi": 0.932,
+          "life_expectancy": 84.4,
+          "life_exp_index": 0.9908,
+          "education_index": 0.8873,
+          "income_index": 0.9209
         }
-      },
-      "hdi": {
-        "2000": 0.9063,
-        "2010": 0.9063,
-        "2020": 0.9213
       }
     },
     {
-      "name": "16e \u2014 Passy",
-      "slug": "16e_\u2014_passy",
+      "name": "16e Passy",
+      "id": 16,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9616
+          "hdi": 0.9208
         },
         "2010": {
-          "hdi": 0.9616
+          "hdi": 0.9358
         },
         "2020": {
-          "hdi": 0.9766
+          "hdi": 0.9508,
+          "life_expectancy": 87.1,
+          "life_exp_index": 1.0,
+          "education_index": 0.8984,
+          "income_index": 0.9567
         }
-      },
-      "hdi": {
-        "2000": 0.9616,
-        "2010": 0.9616,
-        "2020": 0.9766
       }
     },
     {
-      "name": "17e \u2014 Batignolles",
-      "slug": "17e_\u2014_batignolles",
+      "name": "17e Batignolles",
+      "id": 17,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.9186
+          "hdi": 0.8995
         },
         "2010": {
-          "hdi": 0.9186
+          "hdi": 0.9145
         },
         "2020": {
-          "hdi": 0.9336
+          "hdi": 0.9295,
+          "life_expectancy": 84.3,
+          "life_exp_index": 0.9892,
+          "education_index": 0.8789,
+          "income_index": 0.9237
         }
-      },
-      "hdi": {
-        "2000": 0.9186,
-        "2010": 0.9186,
-        "2020": 0.9336
       }
     },
     {
-      "name": "18e \u2014 Buttes-Montmartre",
-      "slug": "18e_\u2014_buttes-montmartre",
+      "name": "18e Buttes-Montmartre",
+      "id": 18,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8295
+          "hdi": 0.86
         },
         "2010": {
-          "hdi": 0.8295
+          "hdi": 0.875
         },
         "2020": {
-          "hdi": 0.8445
+          "hdi": 0.89,
+          "life_expectancy": 82.5,
+          "life_exp_index": 0.9615,
+          "education_index": 0.8338,
+          "income_index": 0.8794
         }
-      },
-      "hdi": {
-        "2000": 0.8295,
-        "2010": 0.8295,
-        "2020": 0.8445
       }
     },
     {
-      "name": "19e \u2014 Buttes-Chaumont",
-      "slug": "19e_\u2014_buttes-chaumont",
+      "name": "19e Buttes-Chaumont",
+      "id": 19,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8083
+          "hdi": 0.8413
         },
         "2010": {
-          "hdi": 0.8083
+          "hdi": 0.8563
         },
         "2020": {
-          "hdi": 0.8233
+          "hdi": 0.8713,
+          "life_expectancy": 82.8,
+          "life_exp_index": 0.9662,
+          "education_index": 0.7902,
+          "income_index": 0.8665
         }
-      },
-      "hdi": {
-        "2000": 0.8083,
-        "2010": 0.8083,
-        "2020": 0.8233
       }
     },
     {
-      "name": "20e \u2014 M\u00e9nilmontant",
-      "slug": "20e_\u2014_m\u00e9nilmontant",
+      "name": "20e Ménilmontant",
+      "id": 20,
       "values": {
+        "1870": null,
+        "1880": null,
+        "1890": null,
+        "1900": null,
+        "1910": null,
+        "1920": null,
+        "1930": null,
+        "1940": null,
+        "1950": null,
+        "1960": null,
+        "1970": null,
+        "1980": null,
+        "1990": null,
         "2000": {
-          "hdi": 0.8222
+          "hdi": 0.8486
         },
         "2010": {
-          "hdi": 0.8222
+          "hdi": 0.8636
         },
         "2020": {
-          "hdi": 0.8372
+          "hdi": 0.8786,
+          "life_expectancy": 82.2,
+          "life_exp_index": 0.9569,
+          "education_index": 0.8136,
+          "income_index": 0.871
         }
-      },
-      "hdi": {
-        "2000": 0.8222,
-        "2010": 0.8222,
-        "2020": 0.8372
       }
     }
   ]

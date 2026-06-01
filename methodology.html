@@ -22,13 +22,16 @@
     <section class="method-section">
       <h2>I. Urban Quality Index: Construct Validity and Normalization</h2>
       <p>The Urban Quality Index (UQI) operationalizes <em>spatial inequality of planning</em> as a composite of publicly provisioned infrastructure and amenities at the neighborhood scale. Unlike market-derived indices (property values, rental yields), each UQI component records a state decision: where transit lines were routed, where sewers were laid, where hospitals and libraries were sited.</p>
-      <p>For neighborhood <em>i</em>, decade <em>t</em>, and component variable <em>v</em>, we apply within-city, within-decade min-max normalization:</p>
-      <p class="math-formula">n<sub>i,t,v</sub> = (x<sub>i,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>) / (max<sub>j</sub> x<sub>j,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>)</p>
-      <p>When <em>v</em> is inversely related to planning quality (e.g. crowding proxies), we apply 1 − n. The aggregate UQI score is the arithmetic mean of selected normalized components, rescaled to 0–100. Equal weighting reflects the epistemological stance that no single dimension of planned infrastructure should dominate ex ante; sensitivity to variable selection is reported via the interactive toggles on the main page.</p>
+      <p>To construct the UQI we solve a small optimization problem. For each neighborhood <em>i</em>, decade <em>t</em>, and variable <em>v</em>, we define the normalized score as the solution to a min-max rescaling on the cross-sectional distribution:</p>
+      <p class="math-formula">n(i,t,v) = ( x(i,t,v) − min<sub>j</sub> x(j,t,v) ) / ( max<sub>j</sub> x(j,t,v) − min<sub>j</sub> x(j,t,v) )</p>
+      <p>For variables where lower is better — crowding, density — we apply the complement: one minus that quantity. The composite UQI is then the equal-weight arithmetic mean of the selected normalized scores, scaled to 0–100.</p>
+      <p class="math-formula">UQI(i,t) = 100 · (1 / |V<sub>t</sub>|) Σ<sub>v</sub> n′(i,t,v)</p>
+      <p>The critical methodological choice is the normalization domain. We normalize within city and within decade — not globally — because we are measuring relative planning quality across neighborhoods of the same city at a given moment, not absolute welfare levels. A global normalization would conflate the question of whether Paris is better than Mexico City with the question of whether the 7<sup>e</sup> is better than the 19<sup>e</sup>, which are different questions the project keeps separate.</p>
+      <p>For transit access specifically, we made a design choice that is worth stating explicitly. The naive measure — metro stations per 100,000 residents — creates an endogeneity between population and the variable itself. When central arrondissements depopulate after 1970, as Paris's did, their transit score rises mechanically not because transit improved but because the denominator shrank. We replace this with stations per square kilometer of arrondissement area, a fixed geographic quantity that is immune to population dynamics. This is the same logic that motivates using land area rather than population as the denominator in density-adjusted amenity measures in the urban economics literature.</p>
       <h3>Component definitions</h3>
       <dl class="method-dl">
-        <dt>Transit access</dt>
-        <dd>Station-equivalents per 100,000 residents. Metro receives unit weight 1.0 as the capacity benchmark; surface modes receive fractional weights proportional to throughput. Source: Sistema de Transporte Colectivo (CDMX); Wikidata/OSM station inventories with opening dates (Paris).</dd>
+        <dt>Transit access (Paris)</dt>
+        <dd>Cumulative métro stations per km² of arrondissement area by decade opening date (RATP/Wikidata). CDMX uses weighted station-equivalents per 100,000 residents (Metro = 1.0 benchmark; surface modes fractional).</dd>
         <dt>Electricity, piped water, drainage</dt>
         <dd>Share of inhabited dwellings with service connection, by census decade. Source: INEGI Censos Generales de Población y Vivienda (Mexico); reconstructed arrondissement-level utility rollout curves calibrated to Haussmann-era sewer completion literature (Paris). See Prefecture de Paris archival reports and Pinon (2000) on Parisian network completion.</dd>
         <dt>Hospital access</dt>
@@ -47,7 +50,7 @@
       <h3>Mexico City</h3>
       <p>Alcaldía-level HDI values derive from the PNUD Mexico municipal Human Development Index workbook (1990, 2000, 2010, 2015, 2020). Sub-indices combine life expectancy from CONAPO/SSA mortality tables, mean and expected years of schooling from INEGI Educación, and GNI per capita from INEGI income surveys adjusted to PPP.</p>
       <h3>Paris</h3>
-      <p>Arrondissement-level HDI is computed locally from INSEE Filosofi 2021 median disposable income (income index), ORS Île-de-France / Institut Paris Region life expectancy estimates (health index), and education sub-indices proxied from diploma attainment ranks where arrondissement-level credential tables were unavailable. PPP conversion: OECD factor 0.738 EUR/USD-PPP. Goalposts: UN HDR 2022 (LE: 20–85 years; EYS/MYS normalized to 18 and 15 years respectively; income log-scale 100–75,000 PPP USD). Full specification: <code>data/paris/hdi-methodology.md</code>.</p>
+      <p>Arrondissement-level HDI is computed locally from INSEE Filosofi 2021 median disposable income (income index), ORS Île-de-France life expectancy (health index), and INSEE education sub-indices, aggregated with the UN HDR 2022 geometric mean. Years 2000 and 2010 are documented backcasts from the 2020 cross-section. Full specification: <code>data/paris/hdi-methodology.md</code>.</p>
     </section>
 
     <section class="method-section">
@@ -107,8 +110,15 @@
 
   <footer class="site-footer">
     <div class="ornament">· · ·</div>
-    <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
+    <nav class="footer-nav">
+      <a href="index.html">The Plan and the Price</a>
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      <a href="methodology.html">Methodology &amp; sources</a>
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      <a href="next-steps.html">Next steps</a>
+    </nav>
     <p class="footer-course">ECON 30 · Progress and Inequality · Stanford · Spring 2026</p>
+    <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
   </footer>
 
 </body>

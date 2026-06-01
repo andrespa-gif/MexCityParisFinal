@@ -5,6 +5,7 @@ const parisAliases = new Map([
 
 const lab = window.createCityLab({
   neighborhoodKey: "arrondissements",
+  cityName: "Paris",
   aliases: parisAliases,
   shortName: (name) => name.replace(" — ", " ").replace("Hôtel-de-Ville", "Hôtel-V.").replace("Buttes-Montmartre", "Montmartre").replace("Buttes-Chaumont", "Chaumont").replace("Ménilmontant", "Ménilm."),
   featureName: (feature) => feature.properties?.name || feature.properties?.l_aroff || ""

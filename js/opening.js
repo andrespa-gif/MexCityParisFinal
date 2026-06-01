@@ -8,38 +8,38 @@
     ],
     left: [
       {
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Paris_-_View_from_Notre-Dame%2C_2016.jpg/1280px-Paris_-_View_from_Notre-Dame%2C_2016.jpg",
-        alt: "Paris: Haussmann boulevards and planned center."
+        src: "/images/opening/paris-intro.png",
+        alt: "Paris: Arc de Triomphe and Haussmann radiating avenues from above."
       },
       {
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Paris_-_Pair_of_Haussmannian_buildings_on_boulevard_de_S%C3%A9bastopol.jpg/1280px-Paris_-_Pair_of_Haussmannian_buildings_on_boulevard_de_S%C3%A9bastopol.jpg",
-        alt: "Wealthy Paris: 7th arrondissement Haussmann boulevard."
+        src: "/images/opening/paris-7e.png",
+        alt: "Paris · 7th arrondissement: Eiffel Tower, Seine, and the planned western center."
       },
       {
-        src: "images/mexico/reforma-angel.png",
+        src: "/images/mexico/reforma-angel.png",
         alt: "Mexico City · Miguel Hidalgo: Paseo de la Reforma and the Angel of Independence."
       },
       {
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Paris_-_Pair_of_Haussmannian_buildings_on_boulevard_de_S%C3%A9bastopol.jpg/1280px-Paris_-_Pair_of_Haussmannian_buildings_on_boulevard_de_S%C3%A9bastopol.jpg",
-        alt: "Paris."
+        src: "/images/opening/paris-arc.png",
+        alt: "Paris: Arc de Triomphe and radiating Haussmann avenues at night."
       }
     ],
     right: [
       {
-        src: "images/mexico/condesa.png",
-        alt: "Mexico City: Parque México and the planned Condesa grid from above."
+        src: "/images/opening/cdmx-grandiose-condesa.png",
+        alt: "CDMX: Parque México and the planned Condesa grid from above."
       },
       {
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Banlieue_parisienne_%28Sevran%29.jpg/1280px-Banlieue_parisienne_%28Sevran%29.jpg",
-        alt: "Poor Paris: 19th arrondissement edge and peripheral estates."
+        src: "/images/opening/paris-19e.png",
+        alt: "Paris · 19th arrondissement: peripheral grands ensembles and dense housing blocks."
       },
       {
-        src: "images/mexico/iztapalapa.png",
+        src: "/images/mexico/iztapalapa.png",
         alt: "Mexico City · Iztapalapa: Cablebús over dense hillside colonias."
       },
       {
-        src: "images/mexico/condesa.png",
-        alt: "Mexico City."
+        src: "/images/opening/cdmx-question.png",
+        alt: "CDMX: Santa Fe skyline and Parque La Mexicana at dusk."
       }
     ],
     holdMs: 5500,
@@ -59,7 +59,7 @@
   const dots = section.querySelectorAll(".phase-dot");
   const LABELS = [
     { left: "Paris", right: "CDMX" },
-    { left: "Paris · wealthy", right: "Paris · poor" },
+    { left: "Paris · 7th arrondissement", right: "Paris · 19th arrondissement" },
     { left: "Mexico City · Miguel Hidalgo", right: "Mexico City · Iztapalapa" },
     { left: "Paris", right: "CDMX" }
   ];
@@ -69,6 +69,7 @@
 
   function setImage(img, data) {
     if (!img || !data) return;
+    img.onerror = () => console.warn("Opening image failed:", data.src);
     img.src = data.src;
     img.alt = data.alt;
   }
@@ -96,8 +97,10 @@
 
   function updatePhase(next) {
     phaseText.classList.toggle("question-phase", next === 3);
-    if (leftLabel) leftLabel.innerHTML = `<span class="city-dot paris-dot"></span>${LABELS[next].left}`;
-    if (rightLabel) rightLabel.innerHTML = `<span class="city-dot cdmx-dot"></span>${LABELS[next].right}`;
+    const rightDot = next === 1 ? "paris-dot" : next === 2 ? "cdmx-dot" : "cdmx-dot";
+    const leftDot = next === 2 ? "cdmx-dot" : "paris-dot";
+    if (leftLabel) leftLabel.innerHTML = `<span class="city-dot ${leftDot}"></span>${LABELS[next].left}`;
+    if (rightLabel) rightLabel.innerHTML = `<span class="city-dot ${rightDot}"></span>${LABELS[next].right}`;
     phaseText.style.opacity = "0";
     window.setTimeout(() => {
       phaseText.textContent = OPENING.phases[next].text;

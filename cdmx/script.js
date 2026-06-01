@@ -5,6 +5,7 @@ const cdmxAliases = new Map([
 
 const lab = window.createCityLab({
   neighborhoodKey: "alcaldias",
+  cityName: "Mexico City",
   aliases: cdmxAliases,
   shortName: (name) => name.replace("La Magdalena Contreras", "Magdalena C.").replace("Gustavo A. Madero", "G.A. Madero").replace("Venustiano Carranza", "V. Carranza").replace("Cuajimalpa de Morelos", "Cuajimalpa"),
   featureName: (feature) => feature.properties?.alcaldia || feature.properties?.NOMGEO || feature.properties?.nomgeo || ""

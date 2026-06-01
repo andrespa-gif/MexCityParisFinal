@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin>
 </head>
 <body class="plan-page">
   <script>
@@ -20,12 +21,18 @@
     <div class="opening-panels">
       <div class="opening-panel paris-panel">
         <span class="city-label"><span class="city-dot paris-dot"></span>Paris</span>
-        <div class="img-layer"><img id="paris-img-a" alt="" /><img id="paris-img-b" alt="" /></div>
+        <div class="img-layer">
+          <img id="paris-img-a" class="visible" src="/images/opening/paris-intro.png" alt="Paris: Arc de Triomphe and radiating avenues" />
+          <img id="paris-img-b" src="/images/opening/paris-intro.png" alt="" />
+        </div>
       </div>
       <div class="opening-divider" aria-hidden="true"></div>
       <div class="opening-panel cdmx-panel">
         <span class="city-label"><span class="city-dot cdmx-dot"></span>CDMX</span>
-        <div class="img-layer"><img id="cdmx-img-a" alt="" /><img id="cdmx-img-b" alt="" /></div>
+        <div class="img-layer">
+          <img id="cdmx-img-a" class="visible" src="/images/opening/cdmx-grandiose-condesa.png" alt="CDMX: Parque México aerial" />
+          <img id="cdmx-img-b" src="/images/opening/cdmx-grandiose-condesa.png" alt="" />
+        </div>
       </div>
     </div>
     <div class="opening-overlay"></div>
@@ -94,14 +101,14 @@
       </div>
       <div class="dual-panel">
         <article class="panel paris-panel">
-          <h3 class="panel-title">Paris</h3>
+          <h3 class="panel-title panel-title-btn" id="parisUqiDataBtn" role="button" tabindex="0" title="View compiled Paris data">Paris</h3>
           <div class="map-frame" id="parisUqiMap"></div>
-          <p class="map-caption">Urban Quality Index by arrondissement · <span id="parisUqiMapLabel">2020</span></p>
+          <p class="map-caption">Urban Quality Index by arrondissement · <span id="parisUqiMapLabel">2020</span> · <em>click “Paris” for full data table</em></p>
         </article>
         <article class="panel cdmx-panel">
-          <h3 class="panel-title">CDMX</h3>
+          <h3 class="panel-title panel-title-btn" id="cdmxUqiDataBtn" role="button" tabindex="0" title="View compiled CDMX data">CDMX</h3>
           <div class="map-frame" id="cdmxUqiMap"></div>
-          <p class="map-caption">Urban Quality Index by alcaldía · <span id="cdmxUqiMapLabel">2020</span></p>
+          <p class="map-caption">Urban Quality Index by alcaldía · <span id="cdmxUqiMapLabel">2020</span> · <em>click “CDMX” for full data table</em></p>
         </article>
       </div>
       <div class="legend-strip"><span>Lower</span><div class="uqi-gradient"></div><span>Higher</span></div>
@@ -113,12 +120,13 @@
         </div>
         <input type="range" id="uqiDecadeSlider" min="0" max="15" value="15" step="1">
         <div class="ticks" id="uqiDecadeTicks"></div>
-        <p class="toolbar-note">Check a variable to include it in the index. Click a name below to read what it measures.</p>
+        <p class="toolbar-note">Check a variable to include it in the index. Click a name below for definitions and formulas.</p>
         <div class="var-chips" id="uqiVariableControls"></div>
         <div class="var-detail-drawer" id="varDetailDrawer">
           <button type="button" class="var-drawer-close" id="varDrawerClose" aria-label="Close">×</button>
           <h4 class="var-drawer-title" id="varDrawerTitle"></h4>
           <p class="var-drawer-body" id="varDrawerBody"></p>
+          <div class="var-drawer-math" id="varDrawerMath"></div>
         </div>
       </div>
     </section>
@@ -142,9 +150,9 @@
 
       <div class="math-block">
         <h3>How we compute and compare</h3>
-        <p>For each neighborhood <em>i</em> and decade <em>t</em>, each UQI component <em>v</em> is min-max normalized within the city:</p>
-        <p class="math-formula">n<sub>i,t,v</sub> = (x<sub>i,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>) / (max<sub>j</sub> x<sub>j,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>)</p>
-        <p>Variables where lower is better (e.g. crowding) are inverted. The UQI score is the equal-weight mean of selected normalized components, scaled to 0–100. HDI follows the UN HDR 2022 geometric mean of life expectancy, education, and income sub-indices at the arrondissement or alcaldía level (2020 cross-section).</p>
+        <p>To construct the UQI we solve a small optimization problem. For each neighborhood <em>i</em>, decade <em>t</em>, and variable <em>v</em>, we define the normalized score as min-max rescaling on the cross-sectional distribution within the same city and decade. Lower-is-better variables use the complement. The composite UQI is the equal-weight arithmetic mean of selected normalized scores, scaled to 0–100. Paris transit uses stations per km² (not per capita) so scores do not rise mechanically when central arrondissements depopulate.</p>
+        <p class="math-formula">n(i,t,v) = ( x(i,t,v) − min<sub>j</sub> x(j,t,v) ) / ( max<sub>j</sub> x(j,t,v) − min<sub>j</sub> x(j,t,v) )</p>
+        <p>HDI follows the UN HDR 2022 geometric mean at the arrondissement or alcaldía level (2020). Full specification: <a href="methodology.html">methodology &amp; sources</a>.</p>
         <p>To test whether planning maps onto lived outcomes, we estimate ordinary least squares for each city:</p>
         <p class="math-formula">HDI<sub>i</sub> = α + β · UQI<sub>i</sub> + ε<sub>i</sub></p>
         <p>We report the coefficient of determination R² = 1 − SS<sub>res</sub>/SS<sub>tot</sub>. A higher R² indicates that a larger share of HDI variance co-moves with UQI across neighborhoods in 2020.</p>
@@ -210,6 +218,8 @@
     <div class="ornament">· · ·</div>
     <nav class="footer-nav">
       <a href="methodology.html">Methodology &amp; sources</a>
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      <a href="next-steps.html">Next steps</a>
     </nav>
     <p class="footer-course">ECON 30 · Progress and Inequality · Stanford · Spring 2026</p>
     <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
@@ -221,11 +231,25 @@
 
   <div id="tooltip" role="status" aria-live="polite"></div>
 
-  <script src="js/timeline-data.js"></script>
-  <script src="js/city-lab.js"></script>
-  <script src="js/opening.js"></script>
-  <script src="js/timeline.js"></script>
-  <script src="js/page.js"></script>
-  <script src="js/glossary.js"></script>
+  <div class="city-data-modal" id="cityDataModal" hidden aria-hidden="true">
+    <div class="city-data-backdrop" id="cityDataBackdrop"></div>
+    <div class="city-data-dialog" role="dialog" aria-modal="true" aria-labelledby="cityDataTitle">
+      <button type="button" class="city-data-close" id="cityDataClose" aria-label="Close">×</button>
+      <h3 class="city-data-title" id="cityDataTitle"></h3>
+      <p class="city-data-meta" id="cityDataMeta"></p>
+      <div class="city-data-table-wrap">
+        <table class="city-data-table" id="cityDataTable"></table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/timeline-data.js?v=20260601f"></script>
+  <script src="/js/neighborhood-detail-panel.js?v=20260601"></script>
+  <script src="/js/city-lab.js?v=20260601"></script>
+  <script src="/js/opening.js?v=20260601"></script>
+  <script src="/js/timeline.js?v=20260601"></script>
+  <script src="/js/glossary.js?v=20260601"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin></script>
+  <script defer src="/js/page.js?v=20260601"></script>
 </body>
 </html>

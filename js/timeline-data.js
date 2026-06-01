@@ -4,7 +4,7 @@ window.TIMELINE_DATA = {
       year: "1853–70",
       title: "Haussmann redraws Paris",
       summary: "Napoleon III appoints Baron Haussmann to demolish medieval blocks and cut wide boulevards through the capital.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Paris_1871_-_Rue_de_Rivoli.jpg/800px-Paris_1871_-_Rue_de_Rivoli.jpg",
+      image: "images/paris/01-haussmann-monumental.png",
       detail: [
         "Between 1853 and 1870, Georges-Eugène Haussmann transformed Paris at imperial decree. Twelve grand boulevards pierced old neighborhoods, 325,000 residents were displaced, and standardized stone buildings replaced irregular medieval blocks.",
         "The plan delivered sewers, gas lighting, parks, and a legible urban geometry that still defines central Paris. Investment followed the new axes: western arrondissements gained parks, transit, and amenity-rich streetscapes first.",
@@ -16,7 +16,7 @@ window.TIMELINE_DATA = {
       year: "1860",
       title: "Paris annexes its industrial ring",
       summary: "Eleven surrounding communes join the city, expanding Paris to 20 arrondissements and absorbing working-class suburbs.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Plan_de_Paris_en_1860.jpg/800px-Plan_de_Paris_en_1860.jpg",
+      image: "/images/paris/02-annex-rings.png",
       detail: [
         "In 1860, Paris annexed Belleville, Montmartre, and other peripheral communes, creating the 20-arrondissement layout still used today. The expansion brought industrial workers and migrants inside city limits without equal investment in their streets.",
         "New arrondissements received walls, limited transit, and dense housing, while the renovated center kept Haussmann's boulevards and amenities. Administrative unity did not mean planning equality.",
@@ -28,7 +28,7 @@ window.TIMELINE_DATA = {
       year: "1889",
       title: "World's Fair and the Eiffel Tower",
       summary: "The Exposition Universelle projects French modernity to the world, and concentrates spectacle on the western axis.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg",
+      image: "/images/paris/03-exposition-1889.png",
       detail: [
         "The 1889 World's Fair crowned the Champ de Mars with the Eiffel Tower, signaling Paris as capital of progress. Grand exhibitions required grand infrastructure: transit, lighting, public space, concentrated on the western showcase districts.",
         "Fairgrounds and monuments drew investment to arrondissements already favored by Haussmann. Eastern districts saw little of the spectacle's spillover benefits.",
@@ -40,7 +40,7 @@ window.TIMELINE_DATA = {
       year: "1900",
       title: "The Métro opens",
       summary: "The first Métro lines connect the western center to rail terminals. Mobility becomes a planning choice.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Paris_M%C3%A9tro_%28logo%29.svg/800px-Paris_M%C3%A9tro_%28logo%29.svg.png",
+      image: "/images/paris/04-metro-1900.png",
       detail: [
         "The Paris Métro opened in 1900 with lines linking the western arrondissements to major rail stations. Transit access became a durable advantage: neighborhoods near stations gained labor-market access and rising land values.",
         "Early lines skipped the northeastern and eastern periphery. Station density today still correlates with arrondissement wealth, a century-old planning decision embedded in daily life.",
@@ -52,7 +52,7 @@ window.TIMELINE_DATA = {
       year: "1925",
       title: "Plan Voisin and modernist ambitions",
       summary: "Le Corbusier proposes demolishing the Marais for towers and highways, modernism's most radical inequality vision.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Plan_Voisin_model.jpg/800px-Plan_Voisin_model.jpg",
+      image: "/images/paris/05-plan-voisin-1925.png",
       detail: [
         "Le Corbusier's 1925 Plan Voisin imagined razing central Paris for cruciform towers and express highways. It was never built, but it crystallized a modernist logic: clear the old city to impose rational order from above.",
         "Such plans assumed displacement was acceptable if the blueprint was grand enough. Working-class Marais residents would have been erased for an elite vision of efficiency.",
@@ -64,7 +64,7 @@ window.TIMELINE_DATA = {
       year: "1945–73",
       title: "Trente Glorieuses housing estates",
       summary: "Postwar France builds massive grands ensembles in the banlieue: housing without the center's amenities.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Cit%C3%A9_des_4000_%28La_Courneuve%29.jpg/800px-Cit%C3%A9_des_4000_%28La_Courneuve%29.jpg",
+      image: "/images/paris/06-grands-ensembles.png",
       detail: [
         "During the Trente Glorieuses, France built hundreds of grands ensembles, high-rise housing estates on cheap land at the urban edge. Millions gained apartments, but often far from jobs, transit, and the cultural center.",
         "Estates in the 19th and northeastern arrondissements and surrounding banlieue received volume without quality: limited retail, sparse green space, and stigma that depressed property values.",
@@ -76,7 +76,7 @@ window.TIMELINE_DATA = {
       year: "1973",
       title: "Boulevard Périphérique completed",
       summary: "The ring road physically separates Paris from its suburbs, a concrete border between center and periphery.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Boulevard_P%C3%A9riph%C3%A9rique_%28Paris%29.jpg/800px-Boulevard_P%C3%A9riph%C3%A9rique_%28Paris%29.jpg",
+      image: "/images/paris/07-peripherique-1973.png",
       detail: [
         "Completed in 1973, the Boulevard Périphérique encircled Paris with a multi-lane highway. It accelerated car access for western commuters while severing peripheral neighborhoods from the city core.",
         "The Périphérique became a symbolic and physical boundary: Paris inside, banlieue outside. Investment, prestige, and UQI-weighted amenities clustered within the ring.",
@@ -88,7 +88,7 @@ window.TIMELINE_DATA = {
       year: "2001",
       title: "Vélib' and the cycling turn",
       summary: "Paris launches shared bikes, a green amenity that initially served the already dense, wealthy core.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Velib%27_station_Paris.jpg/800px-Velib%27_station_Paris.jpg",
+      image: "/images/paris/08-velib-2001.png",
       detail: [
         "Vélib', launched in 2007 with planning roots in the early 2000s, brought shared bicycles to Paris streets. Early station maps mirrored existing privilege: dense coverage in central and western arrondissements, sparse in the northeast.",
         "Cycling infrastructure followed the same gradient. Green mobility became a new dimension of UQI inequality.",
@@ -100,7 +100,7 @@ window.TIMELINE_DATA = {
       year: "2014",
       title: "Hidalgo and the climate city",
       summary: "Mayor Anne Hidalgo pledges a greener, more egalitarian Paris: parks, pedestrianization, and social housing targets.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Rue_de_Rivoli_%28Paris%29_pieton.jpg/800px-Rue_de_Rivoli_%28Paris%29_pieton.jpg",
+      image: "images/paris/09-hidalgo-2014.png",
       detail: [
         "Since 2014, Mayor Hidalgo has pedestrianized riverbanks, expanded bike lanes, and promised more social housing. Policies aim to reduce car dominance and shrink the green-space gap between west and east.",
         "Rue de Rivoli and Berges de Seine became showpiece transformations, visible in western and central arrondissements first. Eastern districts argue they still lack equivalent park minutes per resident.",
@@ -112,7 +112,7 @@ window.TIMELINE_DATA = {
       year: "2024",
       title: "Olympic city, short-term rentals, the new edge",
       summary: "The Olympics accelerate investment in the Seine-Saint-Denis edge, but short-term rentals squeeze central housing.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Stade_de_France_2024.jpg/800px-Stade_de_France_2024.jpg",
+      image: "images/paris/10-olympics-2024.png",
       detail: [
         "The 2024 Olympics channeled billions into transit and venues in Seine-Saint-Denis, the poorest département bordering Paris. For once, peripheral investment matched global spectacle.",
         "Simultaneously, short-term rental platforms hollowed out central arrondissements, raising rents and displacing long-term residents, a new form of gentrification driven by tourism, not Haussmann.",
@@ -126,10 +126,11 @@ window.TIMELINE_DATA = {
       year: "1876",
       title: "Díaz takes power, the imported blueprint",
       summary: "Porfirio Díaz begins decades of rule, importing European, especially Parisian, planning as proof of modernity.",
-      image: "images/mexico/2ndmexico.png",
+      image: "/images/mexico/diaz-bellas-artes.png",
+      imageNote: "Palacio de Bellas Artes under construction during the Porfiriato, dome still a steel frame beside the Alameda.",
       detail: [
         "When Porfirio Díaz seized power in 1876, he looked to Paris as the model for a modern capital. European planners, architects, and engineers arrived to impose order on a city still shaped by colonial grids and lakebed instability.",
-        "The Porfiriato treated planning as national branding: wide avenues, monuments, and elite districts would signal Mexico's place among civilized nations. But capacity to implement the full Parisian blueprint was always limited.",
+        "The Porfiriato treated planning as national branding: wide avenues, monuments, and elite districts would signal Mexico's place among civilized nations. Grand projects like the Palacio de Bellas Artes, begun in 1904, embodied that ambition even when construction outlasted the regime.",
         "Díaz's modernization favored landowners and foreign investors. The blueprint was selective from the start: grand in the center, absent at the growing periphery."
       ],
       inequality: "The imported Parisian model was applied where elites lived and invested, leaving future colonias populares to build themselves without state infrastructure."
@@ -138,7 +139,8 @@ window.TIMELINE_DATA = {
       year: "1885",
       title: "Reforma developed as ceremonial spine",
       summary: "Paseo de la Reforma becomes Mexico City's Haussmann axis, a boulevard for monuments, not migrants.",
-      image: "images/mexico/reforma-angel.png",
+      image: "/images/mexico/reforma-ceremonial-spine.png",
+      imageNote: "Historic Paseo de la Reforma with El Caballito and the ceremonial boulevard axis toward Chapultepec.",
       detail: [
         "Paseo de la Reforma, developed from the 1860s and extended under Díaz, functioned as Mexico City's answer to the Champs-Élysées. Monuments, embassies, and elite residences lined a controlled ceremonial route.",
         "Reforma connected Chapultepec to the historic center visually but not socially. It displayed progress without extending services to the city's expanding working-class rings.",
@@ -150,7 +152,8 @@ window.TIMELINE_DATA = {
       year: "1900",
       title: "Drainage tunnels and Chapultepec",
       summary: "Engineering projects tame the lakebed and green the west. Infrastructure that stops at the capital's edge.",
-      image: "images/mexico/reforma.png",
+      image: "/images/mexico/chapultepec-aqueduct-1900.png",
+      imageNote: "Colonial Chapultepec aqueduct arches beside modern drainage and streetscape near the western center.",
       detail: [
         "Turn-of-the-century drainage tunnels and the development of Chapultepec Park addressed flood risk and amenity demand in the western center. These were costly, state-led projects requiring capital and expertise.",
         "Peripheral settlements on unstable hillside land received neither drainage nor parks. Residents managed rainwater and sewage informally, a gap that 1985 earthquake data would later expose.",
@@ -162,10 +165,11 @@ window.TIMELINE_DATA = {
       year: "1910–17",
       title: "Revolution interrupts elite modernization",
       summary: "The Mexican Revolution halts Porfirian projects mid-stream, but migration accelerates unchecked growth.",
-      image: "download copy 2.jpg",
+      image: "/images/mexico/revolution-1910-17.png",
+      imageNote: "El Caballito at Reforma and Juárez with the unfinished Palacio Legislativo dome frame rising behind, as Revolution halted Porfirian construction.",
       detail: [
         "The Revolution of 1910–1917 disrupted elite modernization projects and redistributed political power, but it did not stop rural-to-urban migration. Mexico City kept growing faster than any planner could absorb.",
-        "Formal master plans stalled while informal settlements expanded on city edges. The state lost the monopoly on city-building that Paris had maintained under Haussmann.",
+        "Porfirian showpieces stalled mid-build, including the federal legislative palace whose iron dome frame would later become the Monumento a la Revolución. Formal master plans paused while informal settlements expanded on city edges.",
         "Post-revolutionary governments inherited a divided city: a partially Europeanized center and a vast periphery built without plans."
       ],
       inequality: "When centralized planning paused, the poor built their own neighborhoods without drainage, transit, or hospitals, cementing a two-track urbanization path."
@@ -174,9 +178,10 @@ window.TIMELINE_DATA = {
       year: "1929–50",
       title: "Master plan meets colonias populares",
       summary: "Official planners draw modernist schemes while colonias populares absorb migrants faster than the state can serve them.",
-      image: "images/mexico/iztapalapa.png",
+      image: "/images/mexico/colonias-populares-1929-50.png",
+      imageNote: "Aerial view of Reforma and Juárez with the Edificio El Moro and Art Deco towers, as the planned center modernized in the 1940s.",
       detail: [
-        "Mid-century master plans envisioned a rational, zoning-based metropolis. Meanwhile, colonias populares, self-built working-class neighborhoods, expanded on hillsides and lakebed fringes without titles or services.",
+        "Mid-century master plans envisioned a rational, zoning-based metropolis. The center gained Art Deco towers and widened avenues around Reforma and Juárez while colonias populares, self-built working-class neighborhoods, expanded on hillsides and lakebed fringes without titles or services.",
         "The state regularized some settlements retroactively, but always slower than new arrivals. Each regularization cycle left a cohort of residents without water, electricity, or transit for decades.",
         "Mexico City's planning dualism, formal plans for the center and informal growth at the edge, distinguishes it from Paris's more state-controlled expansion."
       ],
