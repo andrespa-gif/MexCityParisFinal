@@ -1,0 +1,2759 @@
+{
+  "title": "Mexico City Urban Quality Index + HDI",
+  "decades": [
+    "1860",
+    "1870",
+    "1880",
+    "1890",
+    "1900",
+    "1910",
+    "1920",
+    "1930",
+    "1940",
+    "1950",
+    "1960",
+    "1970",
+    "1980",
+    "1990",
+    "2000",
+    "2010",
+    "2020"
+  ],
+  "hdiYears": [
+    "1990",
+    "2000",
+    "2010",
+    "2015",
+    "2020"
+  ],
+  "variables": [
+    {
+      "key": "transit_access",
+      "label": "Transit access",
+      "unit": "station-equivalents per 100k residents",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Weighted transit station count normalized by population."
+    },
+    {
+      "key": "electricity",
+      "label": "Electricity coverage",
+      "unit": "share of dwellings",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Share of inhabited dwellings with electricity."
+    },
+    {
+      "key": "piped_water",
+      "label": "Piped water coverage",
+      "unit": "share of dwellings",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Share of inhabited dwellings with piped water."
+    },
+    {
+      "key": "drainage",
+      "label": "Drainage coverage",
+      "unit": "share of dwellings",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Share of inhabited dwellings with drainage."
+    },
+    {
+      "key": "hospital_access",
+      "label": "Hospital access",
+      "unit": "hospitals per 100k residents",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Major hospitals per 100,000 residents."
+    },
+    {
+      "key": "green_space",
+      "label": "Green space per capita",
+      "unit": "m²/person",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Current SEDEMA green-space totals divided by historical population."
+    },
+    {
+      "key": "third_spaces",
+      "label": "Third spaces",
+      "unit": "museums + libraries per 100k residents",
+      "higherIsBetter": true,
+      "defaultSelected": true,
+      "description": "Museums and public libraries per 100,000 residents."
+    }
+  ],
+  "sourceNotes": {
+    "transit_access": "Weighted count of transit stations within the alcaldía, normalized by population. Modes weighted by capacity/service quality (Metro=1.00 benchmark).",
+    "electricity": "Universal coverage citywide by 2020 (99.9%). Inequality is HISTORICAL — when did each alcaldía get electrified?",
+    "piped_water": "NOT universal even in 2020: Iztapalapa at ~62%, with many residents depending on pipas. The indicator with the most present-day inequality.",
+    "drainage": "Universal (99.7%) citywide by 2020. Rural alcaldías only reached near-universal coverage in the 2000s.",
+    "hospital_access": "Major hospital-level institutions only (public, IMSS, ISSSTE, national institutes, major private hospitals). Small clinics and centros de salud excluded.",
+    "green_space": "Current SEDEMA green-space totals divided by historical population — shows how m² per capita evolved as population grew.",
+    "third_spaces": "Cumulative count of museums and public libraries with documented opening dates, divided by population."
+  },
+  "hdiNote": "United Nations Development Programme (PNUD) Índice de Desarrollo Humano municipal. Composite of three dimensions: salud (health), educación (education), ingreso (income). GREEN cells = direct PNUD values; ORANGE cells = back-cast estimates (PNUD has no 1990/2000 series in current 'nueva metodología').",
+  "alcaldias": [
+    {
+      "name": "Álvaro Obregón",
+      "slug": "alvaro_obregon",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.04,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 916.18,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 5.13,
+          "electricity": 0.05,
+          "piped_water": 0.08,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 839.91,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 4.24,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.04,
+          "hospital_access": 0.0,
+          "green_space": 695.07,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 6.15,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.06,
+          "hospital_access": 10.256,
+          "green_space": 503.94,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 7.58,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.1,
+          "hospital_access": 7.579,
+          "green_space": 372.4,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 14.88,
+          "electricity": 0.25,
+          "piped_water": 0.32,
+          "drainage": 0.15,
+          "hospital_access": 4.959,
+          "green_space": 243.65,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 11.32,
+          "electricity": 0.32,
+          "piped_water": 0.42,
+          "drainage": 0.2,
+          "hospital_access": 3.774,
+          "green_space": 185.43,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 9.52,
+          "electricity": 0.45,
+          "piped_water": 0.55,
+          "drainage": 0.3,
+          "hospital_access": 2.721,
+          "green_space": 133.69,
+          "third_spaces": 2.721
+        },
+        "1940": {
+          "transit_access": 6.58,
+          "electricity": 0.6,
+          "piped_water": 0.7,
+          "drainage": 0.45,
+          "hospital_access": 1.879,
+          "green_space": 92.32,
+          "third_spaces": 1.879
+        },
+        "1950": {
+          "transit_access": 3.54,
+          "electricity": 0.75,
+          "piped_water": 0.82,
+          "drainage": 0.6,
+          "hospital_access": 1.073,
+          "green_space": 52.73,
+          "third_spaces": 1.073
+        },
+        "1960": {
+          "transit_access": 1.23,
+          "electricity": 0.88,
+          "piped_water": 0.9,
+          "drainage": 0.75,
+          "hospital_access": 0.455,
+          "green_space": 22.33,
+          "third_spaces": 0.909
+        },
+        "1970": {
+          "transit_access": 0.68,
+          "electricity": 0.95,
+          "piped_water": 0.95,
+          "drainage": 0.87,
+          "hospital_access": 0.438,
+          "green_space": 10.76,
+          "third_spaces": 0.438
+        },
+        "1980": {
+          "transit_access": 0.78,
+          "electricity": 0.98,
+          "piped_water": 0.96,
+          "drainage": 0.94,
+          "hospital_access": 0.313,
+          "green_space": 7.69,
+          "third_spaces": 0.469
+        },
+        "1990": {
+          "transit_access": 1.15,
+          "electricity": 0.992,
+          "piped_water": 0.95,
+          "drainage": 0.97,
+          "hospital_access": 0.311,
+          "green_space": 7.64,
+          "third_spaces": 0.622
+        },
+        "2000": {
+          "transit_access": 0.99,
+          "electricity": 0.995,
+          "piped_water": 0.92,
+          "drainage": 0.985,
+          "hospital_access": 0.291,
+          "green_space": 7.15,
+          "third_spaces": 0.728
+        },
+        "2010": {
+          "transit_access": 1.62,
+          "electricity": 0.997,
+          "piped_water": 0.91,
+          "drainage": 0.994,
+          "hospital_access": 0.413,
+          "green_space": 6.76,
+          "third_spaces": 0.688
+        },
+        "2020": {
+          "transit_access": 2.32,
+          "electricity": 0.998,
+          "piped_water": 0.9,
+          "drainage": 0.997,
+          "hospital_access": 0.395,
+          "green_space": 6.47,
+          "third_spaces": 0.659
+        }
+      },
+      "hdi": {
+        "1990": 0.755,
+        "2000": 0.788,
+        "2010": 0.82,
+        "2015": 0.828,
+        "2020": 0.812
+      }
+    },
+    {
+      "name": "Azcapotzalco",
+      "slug": "azcapotzalco",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.04,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 809.78,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.08,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 742.28,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 4.63,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 614.33,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 6.71,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 445.39,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 12.4,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 329.13,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 12.26,
+          "electricity": 0.3,
+          "piped_water": 0.38,
+          "drainage": 0.2,
+          "hospital_access": 0.0,
+          "green_space": 121.97,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 8.28,
+          "electricity": 0.45,
+          "piped_water": 0.52,
+          "drainage": 0.32,
+          "hospital_access": 0.0,
+          "green_space": 82.39,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 6.37,
+          "electricity": 0.6,
+          "piped_water": 0.65,
+          "drainage": 0.48,
+          "hospital_access": 0.0,
+          "green_space": 56.37,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 4.27,
+          "electricity": 0.75,
+          "piped_water": 0.78,
+          "drainage": 0.65,
+          "hospital_access": 0.0,
+          "green_space": 37.8,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 2.45,
+          "electricity": 0.85,
+          "piped_water": 0.88,
+          "drainage": 0.78,
+          "hospital_access": 0.0,
+          "green_space": 21.19,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 1.05,
+          "electricity": 0.92,
+          "piped_water": 0.94,
+          "drainage": 0.88,
+          "hospital_access": 0.539,
+          "green_space": 10.74,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.67,
+          "electricity": 0.97,
+          "piped_water": 0.97,
+          "drainage": 0.95,
+          "hospital_access": 0.374,
+          "green_space": 7.45,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 1.03,
+          "electricity": 0.99,
+          "piped_water": 0.97,
+          "drainage": 0.98,
+          "hospital_access": 0.332,
+          "green_space": 6.62,
+          "third_spaces": 0.332
+        },
+        "1990": {
+          "transit_access": 1.9,
+          "electricity": 0.995,
+          "piped_water": 0.96,
+          "drainage": 0.992,
+          "hospital_access": 0.421,
+          "green_space": 8.39,
+          "third_spaces": 0.421
+        },
+        "2000": {
+          "transit_access": 1.9,
+          "electricity": 0.997,
+          "piped_water": 0.95,
+          "drainage": 0.996,
+          "hospital_access": 0.454,
+          "green_space": 9.03,
+          "third_spaces": 0.907
+        },
+        "2010": {
+          "transit_access": 1.88,
+          "electricity": 0.998,
+          "piped_water": 0.94,
+          "drainage": 0.998,
+          "hospital_access": 0.482,
+          "green_space": 9.6,
+          "third_spaces": 0.965
+        },
+        "2020": {
+          "transit_access": 3.56,
+          "electricity": 0.999,
+          "piped_water": 0.93,
+          "drainage": 0.999,
+          "hospital_access": 0.463,
+          "green_space": 9.21,
+          "third_spaces": 0.925
+        }
+      },
+      "hdi": {
+        "1990": 0.79,
+        "2000": 0.822,
+        "2010": 0.85,
+        "2015": 0.854,
+        "2020": 0.83
+      }
+    },
+    {
+      "name": "Benito Juárez",
+      "slug": "benito_juarez",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 29.7,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.88,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 27.23,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.73,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 22.53,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 1.05,
+          "electricity": 0.25,
+          "piped_water": 0.35,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 16.34,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 3.25,
+          "electricity": 0.35,
+          "piped_water": 0.45,
+          "drainage": 0.25,
+          "hospital_access": 0.0,
+          "green_space": 12.07,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 6.99,
+          "electricity": 0.5,
+          "piped_water": 0.6,
+          "drainage": 0.38,
+          "hospital_access": 0.0,
+          "green_space": 8.66,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 6.2,
+          "electricity": 0.65,
+          "piped_water": 0.72,
+          "drainage": 0.55,
+          "hospital_access": 0.0,
+          "green_space": 6.78,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 5.06,
+          "electricity": 0.8,
+          "piped_water": 0.82,
+          "drainage": 0.72,
+          "hospital_access": 0.0,
+          "green_space": 4.95,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 3.71,
+          "electricity": 0.92,
+          "piped_water": 0.92,
+          "drainage": 0.88,
+          "hospital_access": 0.0,
+          "green_space": 3.45,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 2.07,
+          "electricity": 0.96,
+          "piped_water": 0.96,
+          "drainage": 0.94,
+          "hospital_access": 0.0,
+          "green_space": 1.98,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 1.13,
+          "electricity": 0.99,
+          "piped_water": 0.98,
+          "drainage": 0.98,
+          "hospital_access": 0.0,
+          "green_space": 1.56,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 1.48,
+          "electricity": 0.995,
+          "piped_water": 0.99,
+          "drainage": 0.993,
+          "hospital_access": 0.328,
+          "green_space": 1.52,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 2.5,
+          "electricity": 0.997,
+          "piped_water": 0.99,
+          "drainage": 0.997,
+          "hospital_access": 0.367,
+          "green_space": 1.71,
+          "third_spaces": 0.184
+        },
+        "1990": {
+          "transit_access": 3.53,
+          "electricity": 0.998,
+          "piped_water": 0.99,
+          "drainage": 0.998,
+          "hospital_access": 0.736,
+          "green_space": 2.28,
+          "third_spaces": 0.245
+        },
+        "2000": {
+          "transit_access": 3.94,
+          "electricity": 0.999,
+          "piped_water": 0.99,
+          "drainage": 0.999,
+          "hospital_access": 0.832,
+          "green_space": 2.58,
+          "third_spaces": 0.277
+        },
+        "2010": {
+          "transit_access": 5.92,
+          "electricity": 0.999,
+          "piped_water": 0.99,
+          "drainage": 0.999,
+          "hospital_access": 0.778,
+          "green_space": 2.41,
+          "third_spaces": 0.259
+        },
+        "2020": {
+          "transit_access": 8.57,
+          "electricity": 0.999,
+          "piped_water": 0.994,
+          "drainage": 0.999,
+          "hospital_access": 0.691,
+          "green_space": 2.14,
+          "third_spaces": 0.691
+        }
+      },
+      "hdi": {
+        "1990": 0.87,
+        "2000": 0.895,
+        "2010": 0.917,
+        "2015": 0.944,
+        "2020": 0.92
+      }
+    },
+    {
+      "name": "Coyoacán",
+      "slug": "coyoacan",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.03,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 2276.86,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 6.84,
+          "electricity": 0.04,
+          "piped_water": 0.06,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 2086.95,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 11.32,
+          "electricity": 0.07,
+          "piped_water": 0.1,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 1727.19,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 8.2,
+          "electricity": 0.1,
+          "piped_water": 0.15,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 1252.23,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 15.16,
+          "electricity": 0.15,
+          "piped_water": 0.22,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 925.38,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 23.12,
+          "electricity": 0.22,
+          "piped_water": 0.3,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 604.82,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 20.1,
+          "electricity": 0.3,
+          "piped_water": 0.4,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 460.13,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 14.49,
+          "electricity": 0.42,
+          "piped_water": 0.52,
+          "drainage": 0.28,
+          "hospital_access": 0.0,
+          "green_space": 331.69,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 11.25,
+          "electricity": 0.58,
+          "piped_water": 0.65,
+          "drainage": 0.42,
+          "hospital_access": 0.0,
+          "green_space": 229.03,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 6.86,
+          "electricity": 0.72,
+          "piped_water": 0.78,
+          "drainage": 0.58,
+          "hospital_access": 1.428,
+          "green_space": 130.81,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 2.83,
+          "electricity": 0.85,
+          "piped_water": 0.88,
+          "drainage": 0.75,
+          "hospital_access": 0.589,
+          "green_space": 53.93,
+          "third_spaces": 1.178
+        },
+        "1970": {
+          "transit_access": 2.36,
+          "electricity": 0.94,
+          "piped_water": 0.94,
+          "drainage": 0.88,
+          "hospital_access": 0.884,
+          "green_space": 26.98,
+          "third_spaces": 0.884
+        },
+        "1980": {
+          "transit_access": 1.21,
+          "electricity": 0.98,
+          "piped_water": 0.96,
+          "drainage": 0.95,
+          "hospital_access": 0.502,
+          "green_space": 15.34,
+          "third_spaces": 0.67
+        },
+        "1990": {
+          "transit_access": 2.06,
+          "electricity": 0.993,
+          "piped_water": 0.96,
+          "drainage": 0.98,
+          "hospital_access": 0.469,
+          "green_space": 14.31,
+          "third_spaces": 1.25
+        },
+        "2000": {
+          "transit_access": 1.97,
+          "electricity": 0.996,
+          "piped_water": 0.96,
+          "drainage": 0.993,
+          "hospital_access": 0.468,
+          "green_space": 14.3,
+          "third_spaces": 1.405
+        },
+        "2010": {
+          "transit_access": 2.39,
+          "electricity": 0.998,
+          "piped_water": 0.955,
+          "drainage": 0.997,
+          "hospital_access": 0.645,
+          "green_space": 14.76,
+          "third_spaces": 1.612
+        },
+        "2020": {
+          "transit_access": 3.29,
+          "electricity": 0.999,
+          "piped_water": 0.958,
+          "drainage": 0.999,
+          "hospital_access": 0.651,
+          "green_space": 14.9,
+          "third_spaces": 1.627
+        }
+      },
+      "hdi": {
+        "1990": 0.815,
+        "2000": 0.845,
+        "2010": 0.875,
+        "2015": 0.883,
+        "2020": 0.863
+      }
+    },
+    {
+      "name": "Cuajimalpa de Morelos",
+      "slug": "cuajimalpa_de_morelos",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.01,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 917.17,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.02,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 840.43,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.03,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 695.74,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.05,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 504.3,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.08,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 372.67,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 0.0,
+          "electricity": 0.1,
+          "piped_water": 0.1,
+          "drainage": 0.04,
+          "hospital_access": 0.0,
+          "green_space": 468.23,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 0.0,
+          "electricity": 0.12,
+          "piped_water": 0.14,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 487.38,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 0.0,
+          "electricity": 0.18,
+          "piped_water": 0.2,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 426.07,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 0.0,
+          "electricity": 0.25,
+          "piped_water": 0.28,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 336.12,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 0.0,
+          "electricity": 0.4,
+          "piped_water": 0.4,
+          "drainage": 0.22,
+          "hospital_access": 0.0,
+          "green_space": 211.76,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.0,
+          "electricity": 0.55,
+          "piped_water": 0.55,
+          "drainage": 0.35,
+          "hospital_access": 0.0,
+          "green_space": 106.72,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.0,
+          "electricity": 0.75,
+          "piped_water": 0.7,
+          "drainage": 0.55,
+          "hospital_access": 0.0,
+          "green_space": 56.6,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.0,
+          "electricity": 0.88,
+          "piped_water": 0.8,
+          "drainage": 0.75,
+          "hospital_access": 0.0,
+          "green_space": 22.47,
+          "third_spaces": 0.0
+        },
+        "1990": {
+          "transit_access": 0.0,
+          "electricity": 0.95,
+          "piped_water": 0.86,
+          "drainage": 0.88,
+          "hospital_access": 0.0,
+          "green_space": 17.12,
+          "third_spaces": 1.671
+        },
+        "2000": {
+          "transit_access": 0.0,
+          "electricity": 0.975,
+          "piped_water": 0.88,
+          "drainage": 0.93,
+          "hospital_access": 0.0,
+          "green_space": 13.55,
+          "third_spaces": 1.323
+        },
+        "2010": {
+          "transit_access": 0.0,
+          "electricity": 0.99,
+          "piped_water": 0.89,
+          "drainage": 0.97,
+          "hospital_access": 1.073,
+          "green_space": 10.99,
+          "third_spaces": 1.073
+        },
+        "2020": {
+          "transit_access": 0.0,
+          "electricity": 0.996,
+          "piped_water": 0.909,
+          "drainage": 0.99,
+          "hospital_access": 0.919,
+          "green_space": 9.41,
+          "third_spaces": 1.378
+        }
+      },
+      "hdi": {
+        "1990": 0.745,
+        "2000": 0.775,
+        "2010": 0.812,
+        "2015": 0.822,
+        "2020": 0.808
+      }
+    },
+    {
+      "name": "Cuauhtémoc",
+      "slug": "cuauhtemoc",
+      "values": {
+        "1860": {
+          "transit_access": 1.26,
+          "electricity": 0.1,
+          "piped_water": 0.15,
+          "drainage": 0.08,
+          "hospital_access": 1.399,
+          "green_space": 26.8,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 1.92,
+          "electricity": 0.15,
+          "piped_water": 0.22,
+          "drainage": 0.12,
+          "hospital_access": 1.282,
+          "green_space": 24.56,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 2.55,
+          "electricity": 0.22,
+          "piped_water": 0.32,
+          "drainage": 0.18,
+          "hospital_access": 1.061,
+          "green_space": 20.33,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 2.77,
+          "electricity": 0.3,
+          "piped_water": 0.42,
+          "drainage": 0.25,
+          "hospital_access": 0.769,
+          "green_space": 14.74,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 5.12,
+          "electricity": 0.4,
+          "piped_water": 0.55,
+          "drainage": 0.35,
+          "hospital_access": 0.568,
+          "green_space": 10.89,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 11.59,
+          "electricity": 0.55,
+          "piped_water": 0.68,
+          "drainage": 0.5,
+          "hospital_access": 1.03,
+          "green_space": 9.87,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 11.04,
+          "electricity": 0.7,
+          "piped_water": 0.78,
+          "drainage": 0.68,
+          "hospital_access": 0.883,
+          "green_space": 8.46,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 9.32,
+          "electricity": 0.85,
+          "piped_water": 0.87,
+          "drainage": 0.82,
+          "hospital_access": 0.678,
+          "green_space": 6.49,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 7.05,
+          "electricity": 0.94,
+          "piped_water": 0.94,
+          "drainage": 0.92,
+          "hospital_access": 0.486,
+          "green_space": 4.66,
+          "third_spaces": 0.243
+        },
+        "1950": {
+          "transit_access": 3.91,
+          "electricity": 0.97,
+          "piped_water": 0.97,
+          "drainage": 0.96,
+          "hospital_access": 0.428,
+          "green_space": 2.73,
+          "third_spaces": 0.285
+        },
+        "1960": {
+          "transit_access": 1.69,
+          "electricity": 0.99,
+          "piped_water": 0.99,
+          "drainage": 0.99,
+          "hospital_access": 0.337,
+          "green_space": 2.15,
+          "third_spaces": 0.45
+        },
+        "1970": {
+          "transit_access": 2.85,
+          "electricity": 0.995,
+          "piped_water": 0.99,
+          "drainage": 0.995,
+          "hospital_access": 0.439,
+          "green_space": 2.1,
+          "third_spaces": 0.658
+        },
+        "1980": {
+          "transit_access": 4.6,
+          "electricity": 0.998,
+          "piped_water": 0.99,
+          "drainage": 0.998,
+          "hospital_access": 0.491,
+          "green_space": 2.35,
+          "third_spaces": 0.859
+        },
+        "1990": {
+          "transit_access": 6.21,
+          "electricity": 0.999,
+          "piped_water": 0.985,
+          "drainage": 0.999,
+          "hospital_access": 0.671,
+          "green_space": 3.21,
+          "third_spaces": 1.678
+        },
+        "2000": {
+          "transit_access": 6.97,
+          "electricity": 0.999,
+          "piped_water": 0.98,
+          "drainage": 0.999,
+          "hospital_access": 0.775,
+          "green_space": 3.71,
+          "third_spaces": 2.131
+        },
+        "2010": {
+          "transit_access": 9.31,
+          "electricity": 0.999,
+          "piped_water": 0.978,
+          "drainage": 0.999,
+          "hospital_access": 0.752,
+          "green_space": 3.6,
+          "third_spaces": 2.82
+        },
+        "2020": {
+          "transit_access": 12.24,
+          "electricity": 0.999,
+          "piped_water": 0.982,
+          "drainage": 0.999,
+          "hospital_access": 0.733,
+          "green_space": 3.51,
+          "third_spaces": 2.748
+        }
+      },
+      "hdi": {
+        "1990": 0.81,
+        "2000": 0.84,
+        "2010": 0.872,
+        "2015": 0.878,
+        "2020": 0.853
+      }
+    },
+    {
+      "name": "Gustavo A. Madero",
+      "slug": "gustavo_a_madero",
+      "values": {
+        "1860": {
+          "transit_access": 6.71,
+          "electricity": 0.03,
+          "piped_water": 0.04,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 1756.91,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 6.15,
+          "electricity": 0.05,
+          "piped_water": 0.08,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 1610.59,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 10.19,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.04,
+          "hospital_access": 0.0,
+          "green_space": 1332.82,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 11.08,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.06,
+          "hospital_access": 0.0,
+          "green_space": 966.35,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 22.74,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.1,
+          "hospital_access": 0.0,
+          "green_space": 714.11,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 17.45,
+          "electricity": 0.28,
+          "piped_water": 0.35,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 228.41,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 12.52,
+          "electricity": 0.4,
+          "piped_water": 0.48,
+          "drainage": 0.28,
+          "hospital_access": 0.0,
+          "green_space": 151.25,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 9.15,
+          "electricity": 0.55,
+          "piped_water": 0.6,
+          "drainage": 0.42,
+          "hospital_access": 0.0,
+          "green_space": 102.68,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 6.11,
+          "electricity": 0.7,
+          "piped_water": 0.72,
+          "drainage": 0.58,
+          "hospital_access": 0.0,
+          "green_space": 68.56,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 3.37,
+          "electricity": 0.82,
+          "piped_water": 0.82,
+          "drainage": 0.72,
+          "hospital_access": 0.488,
+          "green_space": 38.33,
+          "third_spaces": 0.488
+        },
+        "1960": {
+          "transit_access": 1.07,
+          "electricity": 0.9,
+          "piped_water": 0.9,
+          "drainage": 0.85,
+          "hospital_access": 0.345,
+          "green_space": 13.56,
+          "third_spaces": 0.173
+        },
+        "1970": {
+          "transit_access": 0.76,
+          "electricity": 0.96,
+          "piped_water": 0.94,
+          "drainage": 0.93,
+          "hospital_access": 0.253,
+          "green_space": 6.62,
+          "third_spaces": 0.169
+        },
+        "1980": {
+          "transit_access": 1.42,
+          "electricity": 0.985,
+          "piped_water": 0.95,
+          "drainage": 0.97,
+          "hospital_access": 0.198,
+          "green_space": 5.19,
+          "third_spaces": 0.198
+        },
+        "1990": {
+          "transit_access": 2.24,
+          "electricity": 0.994,
+          "piped_water": 0.94,
+          "drainage": 0.988,
+          "hospital_access": 0.315,
+          "green_space": 6.19,
+          "third_spaces": 0.237
+        },
+        "2000": {
+          "transit_access": 2.36,
+          "electricity": 0.997,
+          "piped_water": 0.92,
+          "drainage": 0.995,
+          "hospital_access": 0.324,
+          "green_space": 6.35,
+          "third_spaces": 0.243
+        },
+        "2010": {
+          "transit_access": 3.15,
+          "electricity": 0.998,
+          "piped_water": 0.91,
+          "drainage": 0.998,
+          "hospital_access": 0.337,
+          "green_space": 6.62,
+          "third_spaces": 0.337
+        },
+        "2020": {
+          "transit_access": 4.55,
+          "electricity": 0.999,
+          "piped_water": 0.905,
+          "drainage": 0.999,
+          "hospital_access": 0.341,
+          "green_space": 6.69,
+          "third_spaces": 0.341
+        }
+      },
+      "hdi": {
+        "1990": 0.76,
+        "2000": 0.79,
+        "2010": 0.825,
+        "2015": 0.832,
+        "2020": 0.816
+      }
+    },
+    {
+      "name": "Iztacalco",
+      "slug": "iztacalco",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.04,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 966.83,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.08,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 886.18,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 733.42,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 531.81,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 10.11,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 392.94,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 20.2,
+          "electricity": 0.25,
+          "piped_water": 0.32,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 261.89,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 15.46,
+          "electricity": 0.35,
+          "piped_water": 0.42,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 200.38,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 11.17,
+          "electricity": 0.5,
+          "piped_water": 0.55,
+          "drainage": 0.28,
+          "hospital_access": 0.0,
+          "green_space": 144.85,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 7.73,
+          "electricity": 0.65,
+          "piped_water": 0.68,
+          "drainage": 0.42,
+          "hospital_access": 0.0,
+          "green_space": 100.17,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 5.3,
+          "electricity": 0.8,
+          "piped_water": 0.8,
+          "drainage": 0.58,
+          "hospital_access": 0.0,
+          "green_space": 57.28,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 1.01,
+          "electricity": 0.9,
+          "piped_water": 0.89,
+          "drainage": 0.75,
+          "hospital_access": 0.0,
+          "green_space": 9.78,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.5,
+          "electricity": 0.96,
+          "piped_water": 0.94,
+          "drainage": 0.88,
+          "hospital_access": 0.209,
+          "green_space": 4.07,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 1.4,
+          "electricity": 0.985,
+          "piped_water": 0.96,
+          "drainage": 0.95,
+          "hospital_access": 0.175,
+          "green_space": 3.41,
+          "third_spaces": 0.175
+        },
+        "1990": {
+          "transit_access": 2.1,
+          "electricity": 0.994,
+          "piped_water": 0.95,
+          "drainage": 0.985,
+          "hospital_access": 0.223,
+          "green_space": 4.34,
+          "third_spaces": 0.223
+        },
+        "2000": {
+          "transit_access": 2.63,
+          "electricity": 0.997,
+          "piped_water": 0.94,
+          "drainage": 0.994,
+          "hospital_access": 0.243,
+          "green_space": 4.73,
+          "third_spaces": 0.243
+        },
+        "2010": {
+          "transit_access": 4.09,
+          "electricity": 0.998,
+          "piped_water": 0.93,
+          "drainage": 0.997,
+          "hospital_access": 0.26,
+          "green_space": 5.06,
+          "third_spaces": 0.52
+        },
+        "2020": {
+          "transit_access": 5.34,
+          "electricity": 0.999,
+          "piped_water": 0.925,
+          "drainage": 0.999,
+          "hospital_access": 0.247,
+          "green_space": 4.8,
+          "third_spaces": 0.494
+        }
+      },
+      "hdi": {
+        "1990": 0.795,
+        "2000": 0.825,
+        "2010": 0.855,
+        "2015": 0.861,
+        "2020": 0.833
+      }
+    },
+    {
+      "name": "Iztapalapa",
+      "slug": "iztapalapa",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.02,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 1833.84,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.04,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 1681.17,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.06,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 1391.27,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.1,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 1008.7,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.12,
+          "piped_water": 0.15,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 745.4,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 5.59,
+          "electricity": 0.18,
+          "piped_water": 0.2,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 550.08,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 4.42,
+          "electricity": 0.25,
+          "piped_water": 0.28,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 434.88,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 3.25,
+          "electricity": 0.35,
+          "piped_water": 0.4,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 319.45,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 2.27,
+          "electricity": 0.5,
+          "piped_water": 0.52,
+          "drainage": 0.28,
+          "hospital_access": 0.0,
+          "green_space": 223.07,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 1.31,
+          "electricity": 0.65,
+          "piped_water": 0.65,
+          "drainage": 0.45,
+          "hospital_access": 0.0,
+          "green_space": 128.36,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.67,
+          "electricity": 0.78,
+          "piped_water": 0.75,
+          "drainage": 0.6,
+          "hospital_access": 0.0,
+          "green_space": 38.67,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.77,
+          "electricity": 0.88,
+          "piped_water": 0.82,
+          "drainage": 0.75,
+          "hospital_access": 0.0,
+          "green_space": 18.84,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 1.06,
+          "electricity": 0.95,
+          "piped_water": 0.85,
+          "drainage": 0.88,
+          "hospital_access": 0.079,
+          "green_space": 7.79,
+          "third_spaces": 0.158
+        },
+        "1990": {
+          "transit_access": 1.24,
+          "electricity": 0.985,
+          "piped_water": 0.8,
+          "drainage": 0.96,
+          "hospital_access": 0.134,
+          "green_space": 6.6,
+          "third_spaces": 0.134
+        },
+        "2000": {
+          "transit_access": 1.36,
+          "electricity": 0.993,
+          "piped_water": 0.7,
+          "drainage": 0.985,
+          "hospital_access": 0.113,
+          "green_space": 5.55,
+          "third_spaces": 0.169
+        },
+        "2010": {
+          "transit_access": 1.64,
+          "electricity": 0.996,
+          "piped_water": 0.65,
+          "drainage": 0.993,
+          "hospital_access": 0.165,
+          "green_space": 5.42,
+          "third_spaces": 0.165
+        },
+        "2020": {
+          "transit_access": 2.81,
+          "electricity": 0.998,
+          "piped_water": 0.62,
+          "drainage": 0.997,
+          "hospital_access": 0.163,
+          "green_space": 5.36,
+          "third_spaces": 0.218
+        }
+      },
+      "hdi": {
+        "1990": 0.72,
+        "2000": 0.75,
+        "2010": 0.785,
+        "2015": 0.795,
+        "2020": 0.783
+      }
+    },
+    {
+      "name": "La Magdalena Contreras",
+      "slug": "la_magdalena_contreras",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.01,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 853.65,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.02,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 782.6,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.04,
+          "piped_water": 0.03,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 647.49,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.06,
+          "piped_water": 0.05,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 469.45,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.1,
+          "piped_water": 0.08,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 346.96,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 9.69,
+          "electricity": 0.15,
+          "piped_water": 0.12,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 258.74,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 7.69,
+          "electricity": 0.22,
+          "piped_water": 0.18,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 205.28,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 5.66,
+          "electricity": 0.32,
+          "piped_water": 0.28,
+          "drainage": 0.14,
+          "hospital_access": 0.0,
+          "green_space": 151.07,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 3.95,
+          "electricity": 0.45,
+          "piped_water": 0.38,
+          "drainage": 0.22,
+          "hospital_access": 0.0,
+          "green_space": 105.6,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 2.28,
+          "electricity": 0.6,
+          "piped_water": 0.55,
+          "drainage": 0.38,
+          "hospital_access": 0.0,
+          "green_space": 60.81,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.0,
+          "electricity": 0.75,
+          "piped_water": 0.7,
+          "drainage": 0.55,
+          "hospital_access": 0.0,
+          "green_space": 32.78,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.4,
+          "electricity": 0.87,
+          "piped_water": 0.82,
+          "drainage": 0.75,
+          "hospital_access": 0.0,
+          "green_space": 17.7,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.35,
+          "electricity": 0.95,
+          "piped_water": 0.88,
+          "drainage": 0.88,
+          "hospital_access": 0.0,
+          "green_space": 7.71,
+          "third_spaces": 1.155
+        },
+        "1990": {
+          "transit_access": 0.31,
+          "electricity": 0.98,
+          "piped_water": 0.88,
+          "drainage": 0.95,
+          "hospital_access": 0.513,
+          "green_space": 6.85,
+          "third_spaces": 1.025
+        },
+        "2000": {
+          "transit_access": 0.14,
+          "electricity": 0.99,
+          "piped_water": 0.87,
+          "drainage": 0.98,
+          "hospital_access": 0.901,
+          "green_space": 6.01,
+          "third_spaces": 0.901
+        },
+        "2010": {
+          "transit_access": 0.13,
+          "electricity": 0.995,
+          "piped_water": 0.85,
+          "drainage": 0.992,
+          "hospital_access": 0.837,
+          "green_space": 5.58,
+          "third_spaces": 0.837
+        },
+        "2020": {
+          "transit_access": 0.12,
+          "electricity": 0.998,
+          "piped_water": 0.84,
+          "drainage": 0.996,
+          "hospital_access": 0.808,
+          "green_space": 5.39,
+          "third_spaces": 0.808
+        }
+      },
+      "hdi": {
+        "1990": 0.73,
+        "2000": 0.76,
+        "2010": 0.795,
+        "2015": 0.8,
+        "2020": 0.787
+      }
+    },
+    {
+      "name": "Miguel Hidalgo",
+      "slug": "miguel_hidalgo",
+      "values": {
+        "1860": {
+          "transit_access": 1.79,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 167.31,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 2.46,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 153.37,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 2.72,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 126.92,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 2.95,
+          "electricity": 0.25,
+          "piped_water": 0.35,
+          "drainage": 0.18,
+          "hospital_access": 1.641,
+          "green_space": 92.02,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 7.28,
+          "electricity": 0.35,
+          "piped_water": 0.45,
+          "drainage": 0.25,
+          "hospital_access": 1.213,
+          "green_space": 68.0,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 12.71,
+          "electricity": 0.5,
+          "piped_water": 0.6,
+          "drainage": 0.38,
+          "hospital_access": 0.908,
+          "green_space": 50.9,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 10.82,
+          "electricity": 0.65,
+          "piped_water": 0.72,
+          "drainage": 0.55,
+          "hospital_access": 0.721,
+          "green_space": 40.44,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 8.5,
+          "electricity": 0.8,
+          "piped_water": 0.82,
+          "drainage": 0.72,
+          "hospital_access": 0.531,
+          "green_space": 29.78,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 5.94,
+          "electricity": 0.92,
+          "piped_water": 0.92,
+          "drainage": 0.88,
+          "hospital_access": 0.371,
+          "green_space": 20.82,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 3.32,
+          "electricity": 0.96,
+          "piped_water": 0.96,
+          "drainage": 0.94,
+          "hospital_access": 0.428,
+          "green_space": 11.99,
+          "third_spaces": 0.214
+        },
+        "1960": {
+          "transit_access": 1.76,
+          "electricity": 0.99,
+          "piped_water": 0.98,
+          "drainage": 0.98,
+          "hospital_access": 0.338,
+          "green_space": 9.46,
+          "third_spaces": 0.169
+        },
+        "1970": {
+          "transit_access": 1.89,
+          "electricity": 0.995,
+          "piped_water": 0.99,
+          "drainage": 0.993,
+          "hospital_access": 0.494,
+          "green_space": 9.23,
+          "third_spaces": 0.494
+        },
+        "1980": {
+          "transit_access": 3.02,
+          "electricity": 0.997,
+          "piped_water": 0.99,
+          "drainage": 0.997,
+          "hospital_access": 0.737,
+          "green_space": 10.33,
+          "third_spaces": 0.552
+        },
+        "1990": {
+          "transit_access": 4.18,
+          "electricity": 0.998,
+          "piped_water": 0.985,
+          "drainage": 0.998,
+          "hospital_access": 0.983,
+          "green_space": 13.78,
+          "third_spaces": 0.983
+        },
+        "2000": {
+          "transit_access": 4.68,
+          "electricity": 0.999,
+          "piped_water": 0.975,
+          "drainage": 0.999,
+          "hospital_access": 1.134,
+          "green_space": 15.9,
+          "third_spaces": 1.418
+        },
+        "2010": {
+          "transit_access": 4.96,
+          "electricity": 0.999,
+          "piped_water": 0.97,
+          "drainage": 0.999,
+          "hospital_access": 1.073,
+          "green_space": 15.04,
+          "third_spaces": 1.341
+        },
+        "2020": {
+          "transit_access": 6.8,
+          "electricity": 0.999,
+          "piped_water": 0.972,
+          "drainage": 0.999,
+          "hospital_access": 0.965,
+          "green_space": 13.53,
+          "third_spaces": 1.689
+        }
+      },
+      "hdi": {
+        "1990": 0.835,
+        "2000": 0.865,
+        "2010": 0.9,
+        "2015": 0.917,
+        "2020": 0.903
+      }
+    },
+    {
+      "name": "Milpa Alta",
+      "slug": "milpa_alta",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.005,
+          "piped_water": 0.0,
+          "drainage": 0.0,
+          "hospital_access": 0.0,
+          "green_space": 77.01,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.005,
+          "drainage": 0.0,
+          "hospital_access": 0.0,
+          "green_space": 70.58,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.01,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 58.42,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.02,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 42.35,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.03,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 31.3,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 0.0,
+          "electricity": 0.07,
+          "piped_water": 0.05,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 38.78,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.06,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 39.94,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 0.0,
+          "electricity": 0.12,
+          "piped_water": 0.09,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 34.64,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 0.0,
+          "electricity": 0.18,
+          "piped_water": 0.14,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 27.14,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 0.0,
+          "electricity": 0.3,
+          "piped_water": 0.25,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 17.01,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.0,
+          "electricity": 0.45,
+          "piped_water": 0.38,
+          "drainage": 0.3,
+          "hospital_access": 0.0,
+          "green_space": 12.7,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.0,
+          "electricity": 0.65,
+          "piped_water": 0.55,
+          "drainage": 0.5,
+          "hospital_access": 0.0,
+          "green_space": 9.19,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.0,
+          "electricity": 0.82,
+          "piped_water": 0.7,
+          "drainage": 0.72,
+          "hospital_access": 0.0,
+          "green_space": 5.78,
+          "third_spaces": 1.865
+        },
+        "1990": {
+          "transit_access": 0.0,
+          "electricity": 0.92,
+          "piped_water": 0.78,
+          "drainage": 0.87,
+          "hospital_access": 1.571,
+          "green_space": 4.87,
+          "third_spaces": 1.571
+        },
+        "2000": {
+          "transit_access": 0.0,
+          "electricity": 0.96,
+          "piped_water": 0.8,
+          "drainage": 0.93,
+          "hospital_access": 2.067,
+          "green_space": 3.2,
+          "third_spaces": 2.067
+        },
+        "2010": {
+          "transit_access": 0.0,
+          "electricity": 0.985,
+          "piped_water": 0.82,
+          "drainage": 0.965,
+          "hospital_access": 1.532,
+          "green_space": 2.37,
+          "third_spaces": 1.532
+        },
+        "2020": {
+          "transit_access": 0.0,
+          "electricity": 0.995,
+          "piped_water": 0.84,
+          "drainage": 0.985,
+          "hospital_access": 1.31,
+          "green_space": 2.03,
+          "third_spaces": 1.31
+        }
+      },
+      "hdi": {
+        "1990": 0.66,
+        "2000": 0.7,
+        "2010": 0.74,
+        "2015": 0.755,
+        "2020": 0.745
+      }
+    },
+    {
+      "name": "Tláhuac",
+      "slug": "tlahuac",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.005,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 1952.74,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.01,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 1790.2,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.03,
+          "piped_water": 0.02,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 1481.13,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.05,
+          "piped_water": 0.03,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 1073.87,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.08,
+          "piped_water": 0.05,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 793.68,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 0.0,
+          "electricity": 0.1,
+          "piped_water": 0.07,
+          "drainage": 0.04,
+          "hospital_access": 0.0,
+          "green_space": 633.23,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 0.0,
+          "electricity": 0.12,
+          "piped_water": 0.1,
+          "drainage": 0.06,
+          "hospital_access": 0.0,
+          "green_space": 514.94,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 0.0,
+          "electricity": 0.18,
+          "piped_water": 0.15,
+          "drainage": 0.1,
+          "hospital_access": 0.0,
+          "green_space": 383.82,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 0.0,
+          "electricity": 0.25,
+          "piped_water": 0.22,
+          "drainage": 0.15,
+          "hospital_access": 0.0,
+          "green_space": 270.42,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 0.0,
+          "electricity": 0.4,
+          "piped_water": 0.35,
+          "drainage": 0.28,
+          "hospital_access": 0.0,
+          "green_space": 156.53,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.0,
+          "electricity": 0.55,
+          "piped_water": 0.5,
+          "drainage": 0.45,
+          "hospital_access": 0.0,
+          "green_space": 102.21,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 0.0,
+          "electricity": 0.72,
+          "piped_water": 0.65,
+          "drainage": 0.65,
+          "hospital_access": 0.0,
+          "green_space": 48.93,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.41,
+          "electricity": 0.88,
+          "piped_water": 0.78,
+          "drainage": 0.82,
+          "hospital_access": 0.0,
+          "green_space": 20.79,
+          "third_spaces": 0.681
+        },
+        "1990": {
+          "transit_access": 0.29,
+          "electricity": 0.95,
+          "piped_water": 0.84,
+          "drainage": 0.92,
+          "hospital_access": 0.0,
+          "green_space": 14.78,
+          "third_spaces": 0.968
+        },
+        "2000": {
+          "transit_access": 0.1,
+          "electricity": 0.98,
+          "piped_water": 0.85,
+          "drainage": 0.965,
+          "hospital_access": 0.33,
+          "green_space": 10.09,
+          "third_spaces": 0.661
+        },
+        "2010": {
+          "transit_access": 0.08,
+          "electricity": 0.993,
+          "piped_water": 0.85,
+          "drainage": 0.99,
+          "hospital_access": 0.555,
+          "green_space": 8.48,
+          "third_spaces": 0.555
+        },
+        "2020": {
+          "transit_access": 1.43,
+          "electricity": 0.997,
+          "piped_water": 0.86,
+          "drainage": 0.996,
+          "hospital_access": 0.51,
+          "green_space": 7.78,
+          "third_spaces": 0.765
+        }
+      },
+      "hdi": {
+        "1990": 0.7,
+        "2000": 0.735,
+        "2010": 0.772,
+        "2015": 0.783,
+        "2020": 0.77
+      }
+    },
+    {
+      "name": "Tlalpan",
+      "slug": "tlalpan",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.005,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 2435.94,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 10.26,
+          "electricity": 0.02,
+          "piped_water": 0.01,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 2232.73,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 8.49,
+          "electricity": 0.04,
+          "piped_water": 0.03,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 1847.45,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 12.31,
+          "electricity": 0.06,
+          "piped_water": 0.05,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 1339.64,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 15.16,
+          "electricity": 0.1,
+          "piped_water": 0.08,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 989.96,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 36.7,
+          "electricity": 0.15,
+          "piped_water": 0.12,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 798.97,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 29.98,
+          "electricity": 0.22,
+          "piped_water": 0.18,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 652.62,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 22.4,
+          "electricity": 0.32,
+          "piped_water": 0.28,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 487.55,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 15.8,
+          "electricity": 0.45,
+          "piped_water": 0.38,
+          "drainage": 0.28,
+          "hospital_access": 5.267,
+          "green_space": 343.96,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 9.16,
+          "electricity": 0.58,
+          "piped_water": 0.52,
+          "drainage": 0.42,
+          "hospital_access": 12.207,
+          "green_space": 199.31,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 4.25,
+          "electricity": 0.72,
+          "piped_water": 0.65,
+          "drainage": 0.58,
+          "hospital_access": 6.536,
+          "green_space": 106.72,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 1.15,
+          "electricity": 0.85,
+          "piped_water": 0.78,
+          "drainage": 0.75,
+          "hospital_access": 3.825,
+          "green_space": 49.96,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.65,
+          "electricity": 0.94,
+          "piped_water": 0.86,
+          "drainage": 0.88,
+          "hospital_access": 1.897,
+          "green_space": 17.7,
+          "third_spaces": 0.271
+        },
+        "1990": {
+          "transit_access": 1.2,
+          "electricity": 0.98,
+          "piped_water": 0.88,
+          "drainage": 0.95,
+          "hospital_access": 1.444,
+          "green_space": 13.47,
+          "third_spaces": 0.206
+        },
+        "2000": {
+          "transit_access": 0.95,
+          "electricity": 0.99,
+          "piped_water": 0.87,
+          "drainage": 0.98,
+          "hospital_access": 1.203,
+          "green_space": 11.23,
+          "third_spaces": 0.172
+        },
+        "2010": {
+          "transit_access": 1.44,
+          "electricity": 0.995,
+          "piped_water": 0.87,
+          "drainage": 0.993,
+          "hospital_access": 1.23,
+          "green_space": 10.04,
+          "third_spaces": 0.461
+        },
+        "2020": {
+          "transit_access": 1.83,
+          "electricity": 0.998,
+          "piped_water": 0.88,
+          "drainage": 0.997,
+          "hospital_access": 1.143,
+          "green_space": 9.33,
+          "third_spaces": 0.429
+        }
+      },
+      "hdi": {
+        "1990": 0.745,
+        "2000": 0.775,
+        "2010": 0.81,
+        "2015": 0.82,
+        "2020": 0.798
+      }
+    },
+    {
+      "name": "Venustiano Carranza",
+      "slug": "venustiano_carranza",
+      "values": {
+        "1860": {
+          "transit_access": 0.79,
+          "electricity": 0.08,
+          "piped_water": 0.12,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 152.82,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 1.45,
+          "electricity": 0.12,
+          "piped_water": 0.18,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 140.09,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 1.8,
+          "electricity": 0.18,
+          "piped_water": 0.25,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 115.94,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 1.74,
+          "electricity": 0.25,
+          "piped_water": 0.35,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 84.05,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 3.74,
+          "electricity": 0.35,
+          "piped_water": 0.45,
+          "drainage": 0.25,
+          "hospital_access": 0.0,
+          "green_space": 62.11,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 6.71,
+          "electricity": 0.5,
+          "piped_water": 0.6,
+          "drainage": 0.38,
+          "hospital_access": 0.0,
+          "green_space": 43.3,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 5.79,
+          "electricity": 0.65,
+          "piped_water": 0.72,
+          "drainage": 0.55,
+          "hospital_access": 0.0,
+          "green_space": 33.59,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 4.63,
+          "electricity": 0.8,
+          "piped_water": 0.82,
+          "drainage": 0.72,
+          "hospital_access": 0.0,
+          "green_space": 24.45,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 3.22,
+          "electricity": 0.92,
+          "piped_water": 0.92,
+          "drainage": 0.88,
+          "hospital_access": 0.0,
+          "green_space": 16.98,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 1.71,
+          "electricity": 0.96,
+          "piped_water": 0.96,
+          "drainage": 0.94,
+          "hospital_access": 0.0,
+          "green_space": 9.73,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 0.99,
+          "electricity": 0.99,
+          "piped_water": 0.98,
+          "drainage": 0.98,
+          "hospital_access": 0.0,
+          "green_space": 7.68,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 1.29,
+          "electricity": 0.995,
+          "piped_water": 0.98,
+          "drainage": 0.993,
+          "hospital_access": 0.258,
+          "green_space": 7.49,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 2.4,
+          "electricity": 0.997,
+          "piped_water": 0.98,
+          "drainage": 0.997,
+          "hospital_access": 0.289,
+          "green_space": 8.38,
+          "third_spaces": 0.144
+        },
+        "1990": {
+          "transit_access": 3.56,
+          "electricity": 0.998,
+          "piped_water": 0.97,
+          "drainage": 0.998,
+          "hospital_access": 0.385,
+          "green_space": 11.17,
+          "third_spaces": 0.385
+        },
+        "2000": {
+          "transit_access": 4.02,
+          "electricity": 0.999,
+          "piped_water": 0.96,
+          "drainage": 0.999,
+          "hospital_access": 0.432,
+          "green_space": 12.54,
+          "third_spaces": 0.648
+        },
+        "2010": {
+          "transit_access": 4.27,
+          "electricity": 0.999,
+          "piped_water": 0.955,
+          "drainage": 0.999,
+          "hospital_access": 0.464,
+          "green_space": 13.47,
+          "third_spaces": 0.696
+        },
+        "2020": {
+          "transit_access": 7.75,
+          "electricity": 0.999,
+          "piped_water": 0.96,
+          "drainage": 0.999,
+          "hospital_access": 0.451,
+          "green_space": 13.08,
+          "third_spaces": 0.676
+        }
+      },
+      "hdi": {
+        "1990": 0.77,
+        "2000": 0.8,
+        "2010": 0.835,
+        "2015": 0.84,
+        "2020": 0.818
+      }
+    },
+    {
+      "name": "Xochimilco",
+      "slug": "xochimilco",
+      "values": {
+        "1860": {
+          "transit_access": 0.0,
+          "electricity": 0.01,
+          "piped_water": 0.005,
+          "drainage": 0.005,
+          "hospital_access": 0.0,
+          "green_space": 275.41,
+          "third_spaces": 0.0
+        },
+        "1870": {
+          "transit_access": 0.0,
+          "electricity": 0.02,
+          "piped_water": 0.01,
+          "drainage": 0.01,
+          "hospital_access": 0.0,
+          "green_space": 252.44,
+          "third_spaces": 0.0
+        },
+        "1880": {
+          "transit_access": 0.0,
+          "electricity": 0.04,
+          "piped_water": 0.02,
+          "drainage": 0.02,
+          "hospital_access": 0.0,
+          "green_space": 208.93,
+          "third_spaces": 0.0
+        },
+        "1890": {
+          "transit_access": 0.0,
+          "electricity": 0.06,
+          "piped_water": 0.04,
+          "drainage": 0.03,
+          "hospital_access": 0.0,
+          "green_space": 151.47,
+          "third_spaces": 0.0
+        },
+        "1900": {
+          "transit_access": 0.0,
+          "electricity": 0.1,
+          "piped_water": 0.06,
+          "drainage": 0.05,
+          "hospital_access": 0.0,
+          "green_space": 111.93,
+          "third_spaces": 0.0
+        },
+        "1910": {
+          "transit_access": 17.82,
+          "electricity": 0.15,
+          "piped_water": 0.1,
+          "drainage": 0.08,
+          "hospital_access": 0.0,
+          "green_space": 124.27,
+          "third_spaces": 0.0
+        },
+        "1920": {
+          "transit_access": 17.02,
+          "electricity": 0.2,
+          "piped_water": 0.14,
+          "drainage": 0.12,
+          "hospital_access": 0.0,
+          "green_space": 118.73,
+          "third_spaces": 0.0
+        },
+        "1930": {
+          "transit_access": 13.98,
+          "electricity": 0.28,
+          "piped_water": 0.22,
+          "drainage": 0.18,
+          "hospital_access": 0.0,
+          "green_space": 97.49,
+          "third_spaces": 0.0
+        },
+        "1940": {
+          "transit_access": 12.26,
+          "electricity": 0.4,
+          "piped_water": 0.32,
+          "drainage": 0.25,
+          "hospital_access": 0.0,
+          "green_space": 73.28,
+          "third_spaces": 0.0
+        },
+        "1950": {
+          "transit_access": 7.43,
+          "electricity": 0.55,
+          "piped_water": 0.45,
+          "drainage": 0.38,
+          "hospital_access": 0.0,
+          "green_space": 44.44,
+          "third_spaces": 0.0
+        },
+        "1960": {
+          "transit_access": 3.98,
+          "electricity": 0.7,
+          "piped_water": 0.6,
+          "drainage": 0.52,
+          "hospital_access": 0.0,
+          "green_space": 29.73,
+          "third_spaces": 0.0
+        },
+        "1970": {
+          "transit_access": 2.92,
+          "electricity": 0.83,
+          "piped_water": 0.72,
+          "drainage": 0.7,
+          "hospital_access": 0.0,
+          "green_space": 17.96,
+          "third_spaces": 0.0
+        },
+        "1980": {
+          "transit_access": 0.69,
+          "electricity": 0.92,
+          "piped_water": 0.82,
+          "drainage": 0.85,
+          "hospital_access": 0.46,
+          "green_space": 9.62,
+          "third_spaces": 0.46
+        },
+        "1990": {
+          "transit_access": 2.21,
+          "electricity": 0.965,
+          "piped_water": 0.85,
+          "drainage": 0.93,
+          "hospital_access": 0.369,
+          "green_space": 7.72,
+          "third_spaces": 0.738
+        },
+        "2000": {
+          "transit_access": 1.54,
+          "electricity": 0.985,
+          "piped_water": 0.84,
+          "drainage": 0.97,
+          "hospital_access": 0.27,
+          "green_space": 5.66,
+          "third_spaces": 0.811
+        },
+        "2010": {
+          "transit_access": 1.3,
+          "electricity": 0.993,
+          "piped_water": 0.82,
+          "drainage": 0.99,
+          "hospital_access": 0.241,
+          "green_space": 5.04,
+          "third_spaces": 0.723
+        },
+        "2020": {
+          "transit_access": 1.29,
+          "electricity": 0.997,
+          "piped_water": 0.825,
+          "drainage": 0.996,
+          "hospital_access": 0.226,
+          "green_space": 4.73,
+          "third_spaces": 0.678
+        }
+      },
+      "hdi": {
+        "1990": 0.71,
+        "2000": 0.745,
+        "2010": 0.78,
+        "2015": 0.79,
+        "2020": 0.775
+      }
+    }
+  ],
+  "method": {
+    "uqi": "Selected built-environment variables are min-max normalized across alcaldías within each decade and averaged equally. Demographic size/crowding variables are excluded from the UQI.",
+    "hdi": "PNUD municipal Human Development Index values, available for 1990, 2000, 2010, 2015, and 2020 in the workbook."
+  }
+}

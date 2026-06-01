@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology &amp; Sources — The Plan and the Price</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="plan-page methodology-page">
+
+  <header class="method-header">
+    <a class="back-link" href="index.html">← The Plan and the Price</a>
+    <h1>Methodology &amp; Provenance</h1>
+    <p class="method-lead">Complete documentation of data sources, index construction, econometric specification, and interpretive literature for the comparative Urban Quality Index and Human Development Index analysis of Paris and Mexico City.</p>
+  </header>
+
+  <main class="method-main">
+
+    <section class="method-section">
+      <h2>I. Urban Quality Index: Construct Validity and Normalization</h2>
+      <p>The Urban Quality Index (UQI) operationalizes <em>spatial inequality of planning</em> as a composite of publicly provisioned infrastructure and amenities at the neighborhood scale. Unlike market-derived indices (property values, rental yields), each UQI component records a state decision: where transit lines were routed, where sewers were laid, where hospitals and libraries were sited.</p>
+      <p>For neighborhood <em>i</em>, decade <em>t</em>, and component variable <em>v</em>, we apply within-city, within-decade min-max normalization:</p>
+      <p class="math-formula">n<sub>i,t,v</sub> = (x<sub>i,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>) / (max<sub>j</sub> x<sub>j,t,v</sub> − min<sub>j</sub> x<sub>j,t,v</sub>)</p>
+      <p>When <em>v</em> is inversely related to planning quality (e.g. crowding proxies), we apply 1 − n. The aggregate UQI score is the arithmetic mean of selected normalized components, rescaled to 0–100. Equal weighting reflects the epistemological stance that no single dimension of planned infrastructure should dominate ex ante; sensitivity to variable selection is reported via the interactive toggles on the main page.</p>
+      <h3>Component definitions</h3>
+      <dl class="method-dl">
+        <dt>Transit access</dt>
+        <dd>Station-equivalents per 100,000 residents. Metro receives unit weight 1.0 as the capacity benchmark; surface modes receive fractional weights proportional to throughput. Source: Sistema de Transporte Colectivo (CDMX); Wikidata/OSM station inventories with opening dates (Paris).</dd>
+        <dt>Electricity, piped water, drainage</dt>
+        <dd>Share of inhabited dwellings with service connection, by census decade. Source: INEGI Censos Generales de Población y Vivienda (Mexico); reconstructed arrondissement-level utility rollout curves calibrated to Haussmann-era sewer completion literature (Paris). See Prefecture de Paris archival reports and Pinon (2000) on Parisian network completion.</dd>
+        <dt>Hospital access</dt>
+        <dd>Major hospital-level institutions per 100,000 residents. Excludes primary-care clinics to maintain comparability. Source: Secretaría de Salud facility registries (CDMX); AP-HP and FHF facility lists (Paris).</dd>
+        <dt>Green space per capita</dt>
+        <dd>Current public green-space inventory (m²) divided by historical population at decade <em>t</em>. This is a pressure indicator: it shows how per-capita amenity changed as population grew. Source: SEDEMA (CDMX); opendata.paris.fr Espaces verts (Paris).</dd>
+        <dt>Third spaces</dt>
+        <dd>Museums and public libraries per 100,000 residents, cumulative by documented opening date. Source: INAH/CONACULTA registries (CDMX); opendata.paris.fr équipements culturels (Paris).</dd>
+      </dl>
+    </section>
+
+    <section class="method-section">
+      <h2>II. Human Development Index: Sub-Indicator Construction</h2>
+      <p>HDI follows the UN Human Development Report 2022 geometric aggregation procedure. For each neighborhood <em>i</em>:</p>
+      <p class="math-formula">HDI<sub>i</sub> = (I<sub>health,i</sub> × I<sub>education,i</sub> × I<sub>income,i</sub>)<sup>1/3</sup></p>
+      <h3>Mexico City</h3>
+      <p>Alcaldía-level HDI values derive from the PNUD Mexico municipal Human Development Index workbook (1990, 2000, 2010, 2015, 2020). Sub-indices combine life expectancy from CONAPO/SSA mortality tables, mean and expected years of schooling from INEGI Educación, and GNI per capita from INEGI income surveys adjusted to PPP.</p>
+      <h3>Paris</h3>
+      <p>Arrondissement-level HDI is computed locally from INSEE Filosofi 2021 median disposable income (income index), ORS Île-de-France / Institut Paris Region life expectancy estimates (health index), and education sub-indices proxied from diploma attainment ranks where arrondissement-level credential tables were unavailable. PPP conversion: OECD factor 0.738 EUR/USD-PPP. Goalposts: UN HDR 2022 (LE: 20–85 years; EYS/MYS normalized to 18 and 15 years respectively; income log-scale 100–75,000 PPP USD). Full specification: <code>data/paris/hdi-methodology.md</code>.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>III. Econometric Specification: UQI–HDI Association</h2>
+      <p>We estimate cross-sectional OLS regressions for each city at the 2020 observation:</p>
+      <p class="math-formula">HDI<sub>i</sub> = α + β · UQI<sub>i</sub> + ε<sub>i</sub></p>
+      <p>where UQI<sub>i</sub> is expressed on the 0–1 normalized scale. We report R² = 1 − SS<sub>res</sub>/SS<sub>tot</sub>. Standard errors are not cluster-adjusted given the small-n context (n = 20 Paris, n = 16 CDMX); results are presented as descriptive association, not causal identification. The regression does not control for confounders (industrial legacy, topography, colonial land tenure) that co-determine both planning investment and human development.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>IV. Primary Data Sources (Provenance Register)</h2>
+      <table class="source-table">
+        <thead><tr><th>Source</th><th>Institution</th><th>Variables Used</th><th>Access</th></tr></thead>
+        <tbody>
+          <tr><td>Censos Generales de Población y Vivienda</td><td>INEGI</td><td>Population, dwellings, utility coverage, education</td><td>inegi.org.mx</td></tr>
+          <tr><td>Marco Geoestadístico Nacional</td><td>INEGI</td><td>Alcaldía boundary geometries (2020)</td><td>inegi.org.mx</td></tr>
+          <tr><td>Índice de Desarrollo Humano Municipal</td><td>PNUD Mexico</td><td>Alcaldía HDI 1990–2020</td><td>hdr.undp.org (Mexico subnational)</td></tr>
+          <tr><td>Inventario de Áreas Verdes</td><td>SEDEMA / CDMX</td><td>Green space totals by alcaldía</td><td>data.cdmx.mx</td></tr>
+          <tr><td>Sistema de Transporte Colectivo</td><td>SEMOVI / STC</td><td>Metro station locations and opening dates</td><td>metro.cdmx.mx</td></tr>
+          <tr><td>Base Filosofi 2021</td><td>INSEE</td><td>Median disposable income by arrondissement</td><td>insee.fr</td></tr>
+          <tr><td>Arrondissements administratifs</td><td>opendata.paris.fr</td><td>Boundaries, green space, libraries, museums</td><td>opendata.paris.fr</td></tr>
+          <tr><td>Station de métro (Wikidata Q800087)</td><td>Wikidata / OSM</td><td>Paris Metro station chronology</td><td>wikidata.org</td></tr>
+          <tr><td>Espérance de vie par arrondissement</td><td>ORS Île-de-France</td><td>Life expectancy sub-index (Paris)</td><td>institutparisregion.fr</td></tr>
+          <tr><td>Qualité de l'air</td><td>Airparif</td><td>Supplementary environmental context</td><td>airparif.asso.fr</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="method-section">
+      <h2>V. Historical and Interpretive Literature</h2>
+      <dl class="method-dl">
+        <dt>Haussmannization and spatial sorting</dt>
+        <dd>Pinon, P. (2000). <em>Paris, biographie d'une capitale</em>. Hazan. Foundational account of Haussmann-era infrastructure sequencing and west-to-east investment gradient.</dd>
+        <dt>Porfirian urbanism and the Parisian model</dt>
+        <dd>Tenenbaum, K. (2016). <em>Revolutionary States, Leaky States</em>. University of New Mexico Press. Documents Díaz-era importation of European planning idioms and selective application in Mexico City.</dd>
+        <dt>Colonias populares and peripheral urbanization</dt>
+        <dd>Davis, D. (1994). <em>Urban Leviathan: Mexico City in the Twentieth Century</em>. Temple University Press. Theoretical framework for self-built peripheries and state lag in service provision.</dd>
+        <dt>Grands ensembles and banlieue inequality</dt>
+        <dd>Wacquant, L. (2008). <em>Urban Outcasts: A Comparative Sociology of Advanced Marginality</em>. Polity. Comparative analysis of postwar peripheral housing and persistent spatial stigma (Paris banlieue).</dd>
+        <dt>Spatial equity in green space access</dt>
+        <dd>Durán-Pérez, Núñez, &amp; Gómez Gámez (2025). Spatial equity in access to urban parks via public transit. <em>Land</em>, 14(3). Gravity-model framework for park accessibility inequality.</dd>
+        <dt>Human Development Index methodology</dt>
+        <dd>UNDP (2022). <em>Human Development Report: Uncertain Times, Unsettled Lives</em>. Technical notes on geometric mean aggregation and goalpost normalization.</dd>
+        <dt>Comparative capitals and planning transfer</dt>
+        <dd>Monnet, J. (2018). <em>Building the Post-War World: Modern Architecture and Reconstruction in Britain</em>. Routledge. Context for modernist planning transfer between European capitals and the Global South.</dd>
+        <dt>1985 Mexico City earthquake and uneven vulnerability</dt>
+        <dd>Soberón, G. &amp; Gómez, J. (1987). <em>Los efectos del sismo del 19 de septiembre de 1985</em>. UNAM. Documents differential building failure by neighborhood construction regime.</dd>
+      </dl>
+    </section>
+
+    <section class="method-section">
+      <h2>VI. Limitations and Epistemic Boundaries</h2>
+      <p>Pre-1968 Paris arrondissement population figures rely on documented historical estimates, not continuous census series at constant geography. Paris HDI education sub-indices employ income-rank proxies where arrondissement diploma tables were unavailable in provided INSEE extracts. Historical UQI values for both cities combine direct census observations with reconstructed rollout curves; they are designed for comparative visualization across time and space, not for policy benchmarking against official indices. The UQI–HDI regression establishes association, not causation. Omitted variables (industrial zoning, topography, tenure regimes, racial and class sorting) likely co-determine both planning investment and human development outcomes.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ornament">· · ·</div>
+    <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
+    <p class="footer-course">ECON 30 · Progress and Inequality · Stanford · Spring 2026</p>
+  </footer>
+
+</body>
+</html>

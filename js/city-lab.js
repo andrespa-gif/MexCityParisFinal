@@ -12,7 +12,9 @@ window.createCityLab = function createCityLab(config) {
     hdiMapHeight = 500,
     chartWidth = 980,
     chartHeight = 560,
-    compactVariables = true
+    compactVariables = true,
+    dotColor = null,
+    referenceDecade = null
   } = config;
 
   const state = {
@@ -21,9 +23,11 @@ window.createCityLab = function createCityLab(config) {
     decade: "2020",
     hdiMapYear: "2020",
     scatterYear: "2020",
+    referenceDecade: referenceDecade,
     selectedVariables: new Set(),
     scores: new Map(),
-    playTimer: null
+    playTimer: null,
+    hoveredLine: null
   };
 
   const elements = {
@@ -46,8 +50,8 @@ window.createCityLab = function createCityLab(config) {
   function el(id) {
     return document.getElementById(elements[id] || id);
   }
-  const uqiPalette = ["#c9544d", "#dd875c", "#e4c15e", "#93bd73", "#4f9a63"];
-  const hdiPalette = ["#ddd7ca", "#b9c6e5", "#91a7dd", "#607fc2", "#314f9f"];
+  const uqiPalette = ["#b85c42", "#c98a4a", "#d4a857", "#5a7a52", "#2d5a3d"];
+  const hdiPalette = ["#d8d0e8", "#a8b4d4", "#6b7fad", "#3d5080", "#2a3560"];
   const tooltip = document.getElementById("tooltip");
 
   function slug(value) {
@@ -234,19 +238,25 @@ window.createCityLab = function createCityLab(config) {
     return years.reduce((best, year) => Math.abs(Number(year) - target) < Math.abs(Number(best) - target) ? year : best, years[0]);
   }
 
-  function renderAll() {
+  function renderAll(options = {}) {
+    const { uqi = true, hdi = true, scatter = true, line = true } = options;
     computeScores();
     if (el("decadeLabel")) el("decadeLabel").textContent = state.decade;
     const decadeSlider = el("decadeSlider");
-    if (decadeSlider) decadeSlider.value = state.data.decades.indexOf(state.decade);
+    if (decadeSlider && state.data) decadeSlider.value = state.data.decades.indexOf(state.decade);
     if (el("uqiMapLabel")) el("uqiMapLabel").textContent = state.decade;
     state.hdiMapYear = nearestHdiYear(state.decade) || "2020";
-    state.scatterYear = state.hdiMapYear;
+    if (!options.keepScatterYear) state.scatterYear = state.hdiMapYear;
     if (el("hdiMapLabel")) el("hdiMapLabel").textContent = state.hdiMapYear;
-    if (el("scatterLabel")) el("scatterLabel").textContent = state.hdiMapYear;
-    renderMap("uqiMap", "uqi");
-    renderMap("hdiMap", "hdi");
-    renderScatter();
+    if (el("scatterLabel")) el("scatterLabel").textContent = state.scatterYear;
+    if (uqi) renderMap("uqiMap", "uqi");
+    if (hdi) renderMap("hdiMap", "hdi");
+    if (scatter) renderScatter();
+    if (line) renderUqiLineChart();
+  }
+
+  function setReferenceDecade(decade) {
+    state.referenceDecade = decade;
     renderUqiLineChart();
   }
 
@@ -270,11 +280,24 @@ window.createCityLab = function createCityLab(config) {
       const [x, y] = geometryCentroid(feature.geometry, project);
       return `<text class="map-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${shortName(featureName(feature))}</text>`;
     }).join("");
-    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="#eef0ec"></rect><g>${paths}</g><g>${labels}</g></svg>`;
+    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${mode === "uqi" ? "UQI" : "HDI"} map"><rect width="${width}" height="${height}" fill="#f0e8d8"></rect><g>${paths}</g><g>${labels}</g></svg>`;
     target.querySelectorAll(".alcaldia-path").forEach((path) => {
       path.addEventListener("mousemove", (event) => showMapTooltip(event, path.dataset.mode, path.dataset.name, path.dataset.value));
       path.addEventListener("mouseleave", hideTooltip);
     });
+  }
+
+  function componentBreakdown(name) {
+    const record = state.scores.get(matchSlug(name));
+    if (!record?.item) return "";
+    const vars = selectedVariables();
+    const rows = vars.map((variable) => {
+      const raw = record.item.values?.[state.decade]?.[variable.key];
+      if (typeof raw !== "number") return "";
+      const norm = normalize(raw, variable, state.decade);
+      return `<div class="tip-row"><span>${variable.label}</span><span>${Math.round((norm ?? 0) * 100)}</span></div>`;
+    }).filter(Boolean).join("");
+    return rows ? `<div class="tip-breakdown">${rows}</div>` : "";
   }
 
   function scatterRows() {
@@ -301,18 +324,24 @@ window.createCityLab = function createCityLab(config) {
     const y = (value) => margin.top + (1 - (value - minY) / (maxY - minY)) * (height - margin.top - margin.bottom);
     const meanX = rows.reduce((sum, row) => sum + row.uqi, 0) / rows.length;
     const meanY = rows.reduce((sum, row) => sum + row.hdi, 0) / rows.length;
-    const slope = rows.reduce((sum, row) => sum + (row.uqi - meanX) * (row.hdi - meanY), 0) / rows.reduce((sum, row) => sum + (row.uqi - meanX) ** 2, 0);
+    const ssXY = rows.reduce((sum, row) => sum + (row.uqi - meanX) * (row.hdi - meanY), 0);
+    const ssXX = rows.reduce((sum, row) => sum + (row.uqi - meanX) ** 2, 0);
+    const ssTot = rows.reduce((sum, row) => sum + (row.hdi - meanY) ** 2, 0);
+    const slope = ssXX ? ssXY / ssXX : 0;
     const intercept = meanY - slope * meanX;
+    const ssRes = rows.reduce((sum, row) => sum + (row.hdi - (intercept + slope * row.uqi)) ** 2, 0);
+    const r2 = ssTot ? 1 - ssRes / ssTot : 0;
     const lineY1 = intercept + slope * minX;
     const lineY2 = intercept + slope * maxX;
+    const fillColor = dotColor || uqiPalette[3];
     const yTicks = [0, 0.25, 0.5, 0.75, 1].map((t) => {
       const yy = margin.top + (1 - t) * (height - margin.top - margin.bottom);
       const label = (minY + t * (maxY - minY)).toFixed(2);
       return `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${yy}" y2="${yy}"></line><text class="axis-label" x="${margin.left - 10}" y="${yy + 4}" text-anchor="end">${label}</text>`;
     }).join("");
     const xTicks = [minX, (minX + maxX) / 2, maxX].map((value) => `<text class="axis-label" x="${x(value)}" y="${height - 22}" text-anchor="middle">${Math.round(value * 100)}</text>`).join("");
-    const points = rows.map((row) => `<g><circle class="scatter-dot" cx="${x(row.uqi)}" cy="${y(row.hdi)}" r="6" fill="${colorFromScore(row.uqi, uqiPalette)}" data-name="${row.item.name}" data-uqi="${Math.round(row.uqi * 100)}" data-hdi="${row.hdi.toFixed(3)}"></circle><text class="scatter-label" x="${x(row.uqi)}" y="${y(row.hdi) - 10}">${shortName(row.item.name)}</text></g>`).join("");
-    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="#fff"></rect>${yTicks}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>${xTicks}<line class="trend-line" x1="${x(minX)}" y1="${y(lineY1)}" x2="${x(maxX)}" y2="${y(lineY2)}"></line><text class="axis-label" x="${width / 2}" y="${height - 8}" text-anchor="middle">UQI score (${state.scatterYear})</text><text class="axis-label" x="15" y="${height / 2}" transform="rotate(-90 15 ${height / 2})" text-anchor="middle">HDI (${state.scatterYear})</text>${points}</svg>`;
+    const points = rows.map((row) => `<g class="scatter-group"><circle class="scatter-dot" cx="${x(row.uqi)}" cy="${y(row.hdi)}" r="6" fill="${fillColor}" data-name="${row.item.name}" data-uqi="${Math.round(row.uqi * 100)}" data-hdi="${row.hdi.toFixed(3)}"></circle></g>`).join("");
+    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="#f5efe3"></rect>${yTicks}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>${xTicks}<line class="trend-line" x1="${x(minX)}" y1="${y(lineY1)}" x2="${x(maxX)}" y2="${y(lineY2)}"></line><text class="r2-label" x="${width - margin.right - 8}" y="${margin.top + 16}" text-anchor="end">R² = ${r2.toFixed(3)}</text><text class="axis-label" x="${width / 2}" y="${height - 8}" text-anchor="middle">UQI score (0–100)</text><text class="axis-label" x="15" y="${height / 2}" transform="rotate(-90 15 ${height / 2})" text-anchor="middle">HDI (${state.scatterYear})</text>${points}</svg>`;
     target.querySelectorAll(".scatter-dot").forEach((dot) => {
       dot.addEventListener("mousemove", (event) => showTooltip(event, `<strong>${dot.dataset.name}</strong>UQI: ${dot.dataset.uqi}/100<br>HDI: ${dot.dataset.hdi}`));
       dot.addEventListener("mouseleave", hideTooltip);
@@ -331,33 +360,66 @@ window.createCityLab = function createCityLab(config) {
     const y = (score) => margin.top + (1 - score) * (height - margin.top - margin.bottom);
     const grid = [0, 0.25, 0.5, 0.75, 1].map((value) => `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y(value)}" y2="${y(value)}"></line><text class="axis-label" x="${margin.left - 10}" y="${y(value) + 4}" text-anchor="end">${Math.round(value * 100)}</text>`).join("");
     const xLabels = decades.map((decade, index) => index % 4 === 0 || index === decades.length - 1 ? `<text class="axis-label" x="${x(index)}" y="${height - 22}" text-anchor="middle">${decade}</text>` : "").join("");
+    const refDecade = state.referenceDecade || state.decade;
+    const refIndex = decades.indexOf(refDecade);
+    const refLine = refIndex >= 0 ? `<line class="ref-line" x1="${x(refIndex)}" x2="${x(refIndex)}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text class="axis-label" x="${x(refIndex)}" y="${margin.top - 6}" text-anchor="middle">${refDecade}</text>` : "";
     const lines = neighborhoods().map((item, itemIndex) => {
       const points = decades.map((decade, index) => {
         const score = scoreNeighborhood(item, decade);
         return score == null ? null : [x(index), y(score), score, decade];
       }).filter(Boolean);
       const d = points.map((point, index) => `${index === 0 ? "M" : "L"}${point[0].toFixed(2)},${point[1].toFixed(2)}`).join(" ");
-      const last = points[points.length - 1];
-      const label = last ? `<text class="line-label" x="${last[0] + 6}" y="${last[1] + 4}">${shortName(item.name)}</text>` : "";
-      return `<path class="uqi-line" d="${d}" stroke="${lineColors[itemIndex % lineColors.length]}" data-name="${item.name}"></path>${label}`;
+      const refPoint = points.find((p) => p[3] === refDecade);
+      const dots = refPoint ? `<circle class="line-ref-dot" cx="${refPoint[0]}" cy="${refPoint[1]}" r="4" fill="${lineColors[itemIndex % lineColors.length]}" data-name="${item.name}"></circle>` : "";
+      return `<g class="line-group" data-name="${item.name}"><path class="uqi-line" d="${d}" stroke="${lineColors[itemIndex % lineColors.length]}" data-name="${item.name}"></path>${dots}</g>`;
     }).join("");
-    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="#fff"></rect>${grid}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>${xLabels}<text class="axis-label" x="${width / 2}" y="${height - 8}" text-anchor="middle">Decade</text><text class="axis-label" x="15" y="${height / 2}" transform="rotate(-90 15 ${height / 2})" text-anchor="middle">UQI score</text>${lines}</svg>`;
+    target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="#f5efe3"></rect>${grid}${refLine}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>${xLabels}<text class="axis-label" x="${width / 2}" y="${height - 8}" text-anchor="middle">Decade</text><text class="axis-label" x="15" y="${height / 2}" transform="rotate(-90 15 ${height / 2})" text-anchor="middle">UQI score</text>${lines}<text class="hover-line-label" id="${elements.uqiLineChart}-hover" x="0" y="0" visibility="hidden"></text></svg>`;
+    const svg = target.querySelector("svg");
+    const hoverLabel = target.querySelector(".hover-line-label");
     target.querySelectorAll(".uqi-line").forEach((line) => {
-      line.addEventListener("mousemove", (event) => showTooltip(event, `<strong>${line.dataset.name}</strong>UQI trajectory across all decades for the selected variables.`));
-      line.addEventListener("mouseleave", hideTooltip);
+      const group = line.closest(".line-group");
+      line.addEventListener("mouseenter", () => {
+        state.hoveredLine = line.dataset.name;
+        target.querySelectorAll(".uqi-line").forEach((l) => {
+          l.style.opacity = l.dataset.name === line.dataset.name ? "1" : "0.2";
+          l.style.strokeWidth = l.dataset.name === line.dataset.name ? "3" : "2";
+        });
+        if (hoverLabel) {
+          const pts = line.getAttribute("d").match(/[\d.]+,[\d.]+/g);
+          const last = pts ? pts[pts.length - 1].split(",") : [0, 0];
+          hoverLabel.setAttribute("x", Number(last[0]) + 8);
+          hoverLabel.setAttribute("y", Number(last[1]) + 4);
+          hoverLabel.textContent = shortName(line.dataset.name);
+          hoverLabel.setAttribute("visibility", "visible");
+        }
+      });
+      line.addEventListener("mousemove", (event) => showTooltip(event, `<strong>${line.dataset.name}</strong>UQI trajectory across all decades.`));
+      line.addEventListener("mouseleave", () => {
+        state.hoveredLine = null;
+        target.querySelectorAll(".uqi-line").forEach((l) => { l.style.opacity = "0.76"; l.style.strokeWidth = "2"; });
+        if (hoverLabel) hoverLabel.setAttribute("visibility", "hidden");
+        hideTooltip();
+      });
     });
   }
 
   function showMapTooltip(event, mode, name, value) {
-    showTooltip(event, `<strong>${name}</strong>${mode === "uqi" ? `${state.decade} UQI: ${value}/100` : `${state.hdiMapYear} HDI: ${value}`}`);
+    const breakdown = mode === "uqi" ? componentBreakdown(name) : "";
+    showTooltip(event, `<strong>${name}</strong>${mode === "uqi" ? `${state.decade} UQI: ${value}/100` : `${state.hdiMapYear} HDI: ${value}`}${breakdown}`);
   }
 
   function showTooltip(event, html) {
     if (!tooltip) return;
     tooltip.innerHTML = html;
     tooltip.style.display = "block";
-    tooltip.style.left = `${event.clientX + 14}px`;
-    tooltip.style.top = `${event.clientY + 14}px`;
+    const pad = 14;
+    let left = event.clientX + pad;
+    let top = event.clientY + pad;
+    const rect = tooltip.getBoundingClientRect();
+    if (left + rect.width > window.innerWidth - 8) left = event.clientX - rect.width - pad;
+    if (top + rect.height > window.innerHeight - 8) top = event.clientY - rect.height - pad;
+    tooltip.style.left = `${Math.max(8, left)}px`;
+    tooltip.style.top = `${Math.max(8, top)}px`;
   }
 
   function hideTooltip() {
@@ -416,6 +478,7 @@ window.createCityLab = function createCityLab(config) {
     renderMap,
     renderScatter,
     renderUqiLineChart,
+    scatterRows,
     selectedVariables,
     matchSlug,
     featureName,
@@ -423,6 +486,10 @@ window.createCityLab = function createCityLab(config) {
     colorFromScore,
     colorFromHdi,
     nearestHdiYear,
-    stopDecadePlayback
+    stopDecadePlayback,
+    setReferenceDecade,
+    startDecadePlayback,
+    uqiPalette,
+    hdiPalette
   };
 };
