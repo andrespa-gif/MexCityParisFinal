@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Plan and the Price — Mexico City &amp; Paris</title>
+  <link rel="canonical" href="https://mex-city-paris-vxnn.vercel.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
       </div>
       <div class="opening-divider" aria-hidden="true"></div>
       <div class="opening-panel cdmx-panel">
-        <span class="city-label"><span class="city-dot cdmx-dot"></span>CDMX</span>
+        <span class="city-label"><span class="city-dot cdmx-dot"></span>Mexico City</span>
         <div class="img-layer">
           <img id="cdmx-img-a" class="visible" src="/images/opening/cdmx-grandiose-condesa.png" alt="CDMX: Parque México aerial" />
           <img id="cdmx-img-b" src="/images/opening/cdmx-grandiose-condesa.png" alt="" />
@@ -52,7 +53,11 @@
       <div class="research-box">
         <p>This project measures planning quality and human development across 20 Paris arrondissements and 16 Mexico City alcaldías, and asks whether neighborhoods that received more planned infrastructure also rank higher on health, education, and income.</p>
       </div>
-      <p class="byline">Gaston de Baudry d'Asson · Andrés Palacios<br>ECON 30 · Stanford · Spring 2026</p>
+      <div class="contribution-box">
+        <h3 class="contribution-heading">What this project contributes</h3>
+        <p>To our knowledge, Paris and Mexico City have never been compared at the neighborhood scale using a shared planning-quality index paired with Human Development Index scores. This site is an original comparative analysis: we built the Urban Quality Index (UQI), applied it identically to both cities across 150 years of census and infrastructure data, and synthesized sources that urban economics, development, and planning literatures typically treat separately. The result is a novel data synthesis, not a repackaging of existing city rankings, that makes spatial inequality of planning visible in the same visual language for two capitals that share a Haussmann-era origin but diverged in state capacity and periphery formation.</p>
+      </div>
+      <p class="byline">Gaston de Baudry d'Asson · Andrés Palacios<br>ECON 30 · Stanford · Spring 2026<br><a class="project-link" href="https://mex-city-paris-vxnn.vercel.app">mex-city-paris-vxnn.vercel.app</a></p>
     </section>
 
     <section class="why-section" id="why-section">
@@ -97,7 +102,9 @@
     <section class="map-section" id="uqi-section">
       <h2>Our UQI index</h2>
       <div class="section-intro">
-        <p>To test whether planning is equal, we built an index. The Urban Quality Index scores each neighborhood from 0 to 100 on measurable dimensions of public infrastructure: transit access, green space, drainage and services, hospital access, and civic third spaces. Every component is something a city chose to build, not something the market produced. If planning were equal, these maps would be one color.</p>
+        <p>We chose to create a custom Urban Quality Index because existing measures could not answer the specific question of our project. Property values and rental prices show how markets sort neighborhoods, but they do not directly measure long-term planning investment. Broader livability rankings often operate at the citywide scale, which makes them too general for a neighborhood-by-neighborhood comparison between Paris and Mexico City. Single indicators, such as transit access, green space, hospitals, or cultural institutions, are also insufficient on their own because urban planning is multidimensional. The legacy of 19th-century boulevard planning was not only about streets, but about how infrastructure, public space, services, and accessibility were distributed across the city.</p>
+        <p>For this reason, a standardized neighborhood-level Urban Quality Index was necessary. The UQI allows us to compare arrondissements and alcaldías on the same scale, decade by decade, using variables that capture the material outcomes of planning. Instead of treating urban development as one isolated feature, the index measures whether planned areas accumulated multiple advantages over time. This makes it possible to ask whether historical planning decisions continue to map onto present-day differences in human development.</p>
+        <p>If planning were equal, these maps would be one color.</p>
       </div>
       <div class="dual-panel">
         <article class="panel paris-panel">
@@ -221,6 +228,7 @@
       <span class="footer-nav-sep" aria-hidden="true">·</span>
       <a href="next-steps.html">Next steps</a>
     </nav>
+    <p class="footer-project"><a href="https://mex-city-paris-vxnn.vercel.app">mex-city-paris-vxnn.vercel.app</a></p>
     <p class="footer-course">ECON 30 · Progress and Inequality · Stanford · Spring 2026</p>
     <p class="footer-authors">Gaston de Baudry d'Asson · Andrés Palacios</p>
   </footer>
@@ -246,7 +254,7 @@
   <script src="/js/timeline-data.js?v=20260601f"></script>
   <script src="/js/neighborhood-detail-panel.js?v=20260601"></script>
   <script src="/js/city-lab.js?v=20260601"></script>
-  <script src="/js/opening.js?v=20260601"></script>
+  <script src="/js/opening.js?v=20260605"></script>
   <script src="/js/timeline.js?v=20260601"></script>
   <script src="/js/glossary.js?v=20260601"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin></script>

@@ -58,10 +58,10 @@
   const phaseText = section.querySelector("#phase-text");
   const dots = section.querySelectorAll(".phase-dot");
   const LABELS = [
-    { left: "Paris", right: "CDMX" },
+    { left: "Paris", right: "Mexico City" },
     { left: "Paris · 7th arrondissement", right: "Paris · 19th arrondissement" },
     { left: "Mexico City · Miguel Hidalgo", right: "Mexico City · Iztapalapa" },
-    { left: "Paris", right: "CDMX" }
+    { left: "Paris", right: "Mexico City" }
   ];
   let phase = 0;
   let showA = true;

@@ -71,9 +71,9 @@ body.plan-page {
 
 .city-label {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 4;
+  top: max(12px, env(safe-area-inset-top, 12px));
+  left: 20px;
+  z-index: 6;
   font-family: var(--mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -82,6 +82,10 @@ body.plan-page {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 12px;
+  background: rgba(26, 22, 16, 0.55);
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .city-dot {
@@ -241,6 +245,32 @@ h2 {
   background: var(--parchment-light);
   border: 1px solid var(--ink-faded);
 }
+
+.contribution-box {
+  max-width: 700px;
+  padding: 28px 32px;
+  margin: 0 0 24px;
+  background: var(--parchment-light);
+  border: 1px solid var(--ink-faded);
+  border-left: 3px solid var(--gold);
+}
+
+.contribution-heading {
+  font-family: var(--serif-display);
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.contribution-box p { margin: 0; }
+
+.project-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faded);
+}
+
+.project-link:hover { color: var(--ink); }
 
 .map-section > h2 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -784,6 +814,15 @@ body.overlay-open { overflow: hidden; }
 
 .section-intro p { margin: 0; }
 
+.section-intro p + p {
+  margin-top: 1.25em;
+}
+
+.section-intro .index-rationale {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
 .dual-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1014,6 +1053,20 @@ body.overlay-open { overflow: hidden; }
   color: var(--ink-faded);
   margin: 8px 0;
 }
+
+.footer-project {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  margin: 16px 0 0;
+}
+
+.footer-project a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faded);
+}
+
+.footer-project a:hover { color: var(--ink); }
 
 /* Glossary */
 .gloss-pair { position: relative; }
