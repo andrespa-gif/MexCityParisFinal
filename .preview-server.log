@@ -259,3 +259,7 @@
 127.0.0.1 - - [05/Jun/2026 13:18:29] "GET /images/paris/08-velib-2001.png HTTP/1.1" 304 -
 127.0.0.1 - - [05/Jun/2026 13:18:29] "GET /images/paris/09-hidalgo-2014.png HTTP/1.1" 304 -
 127.0.0.1 - - [05/Jun/2026 13:18:29] "GET /images/paris/10-olympics-2024.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2026 13:23:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2026 13:23:43] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2026 13:23:43] "GET /js/opening.js?v=20260605 HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2026 13:24:18] "GET / HTTP/1.1" 200 -
